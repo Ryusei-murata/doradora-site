@@ -1,0 +1,371 @@
+<title>doradora コーポレートサイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rice:#F6F1E7;
+    --rice-soft:#EEE5D3;
+    --paper-line: rgba(43,38,32,.14);
+    --ink:#2B2620;
+    --ink-soft:#5B5348;
+    --indigo:#1F3A56;
+    --indigo-deep:#14283C;
+    --vermillion:#B5482E;
+    --gold:#A9803D;
+    --surface:#FFFFFF;
+    --shadow: 0 20px 50px -30px rgba(20,20,15,.35);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --rice:#1B1917;
+      --rice-soft:#242019;
+      --paper-line: rgba(238,229,211,.14);
+      --ink:#EDE6D9;
+      --ink-soft:#BDB3A1;
+      --indigo:#8FB0D6;
+      --indigo-deep:#5F84AC;
+      --vermillion:#E08363;
+      --gold:#CBA968;
+      --surface:#221F1B;
+      --shadow: 0 20px 50px -28px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --rice:#1B1917;
+    --rice-soft:#242019;
+    --paper-line: rgba(238,229,211,.14);
+    --ink:#EDE6D9;
+    --ink-soft:#BDB3A1;
+    --indigo:#8FB0D6;
+    --indigo-deep:#5F84AC;
+    --vermillion:#E08363;
+    --gold:#CBA968;
+    --surface:#221F1B;
+    --shadow: 0 20px 50px -28px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--rice);
+    color:var(--ink);
+    font-family:"Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:"Shippori Mincho B1", "Hiragino Mincho ProN", serif;
+    text-wrap:balance;
+    letter-spacing:.02em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;}
+
+  .wrap{max-width:1080px; margin:0 auto; padding:0 clamp(20px,5vw,56px);}
+
+  /* header */
+  header.site{
+    position:sticky; top:0; z-index:40;
+    background:color-mix(in srgb, var(--rice) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--paper-line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px clamp(20px,5vw,56px);
+  }
+  .brandmark{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .brandmark svg{width:30px; height:30px; display:block;}
+  .brandmark .word{font-family:"Shippori Mincho B1", serif; font-size:1.15rem; font-weight:700; letter-spacing:.06em;}
+  .navlinks{display:flex; gap:clamp(14px,3vw,32px); list-style:none; margin:0; padding:0;}
+  .navlinks a{
+    text-decoration:none; font-size:.86rem; font-weight:500; color:var(--ink-soft);
+    letter-spacing:.04em;
+    transition:color .2s ease;
+  }
+  .navlinks a:hover, .navlinks a:focus-visible{color:var(--vermillion);}
+  .navlinks a:focus-visible{outline:2px solid var(--vermillion); outline-offset:4px; border-radius:2px;}
+
+  /* hero */
+  .hero{
+    position:relative;
+    padding:clamp(64px,12vw,120px) 0 clamp(56px,9vw,96px);
+    overflow:hidden;
+  }
+  .hero-rings{
+    position:absolute; right:clamp(-120px,-4vw,-40px); top:50%; transform:translateY(-50%);
+    width:min(560px,60vw); height:min(560px,60vw);
+    opacity:.55;
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; max-width:640px;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:.78rem; font-weight:700; letter-spacing:.14em;
+    color:var(--vermillion); text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--vermillion);}
+  h1.headline{
+    font-size:clamp(2.1rem, 5.4vw, 3.4rem);
+    line-height:1.35;
+    font-weight:800;
+    margin:0 0 22px;
+    color:var(--indigo-deep);
+  }
+  .hero p.lead{
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin:0 0 30px;
+  }
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap:10px 28px;
+    font-size:.84rem; color:var(--ink-soft);
+    border-top:1px solid var(--paper-line);
+    padding-top:18px;
+  }
+  .hero-meta strong{color:var(--ink); font-weight:700;}
+
+  section{padding:clamp(56px,9vw,96px) 0;}
+  .section-head{max-width:56ch; margin:0 0 44px;}
+  .kicker{
+    font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--gold);
+    display:block; margin-bottom:10px;
+  }
+  h2.section-title{
+    font-size:clamp(1.5rem, 3vw, 2.1rem);
+    color:var(--indigo-deep);
+    margin:0 0 14px;
+    font-weight:700;
+  }
+  .section-head p{color:var(--ink-soft); margin:0; max-width:52ch;}
+
+  /* business cards */
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:1px;
+    background:var(--paper-line);
+    border:1px solid var(--paper-line);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .card{
+    background:var(--surface);
+    padding:32px 28px;
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .card .num{
+    font-family:"Shippori Mincho B1", serif;
+    font-size:.82rem; color:var(--vermillion); font-weight:700; letter-spacing:.08em;
+  }
+  .card h3{margin:0; font-size:1.18rem; color:var(--indigo-deep); font-weight:700;}
+  .card p{margin:0; color:var(--ink-soft); font-size:.94rem;}
+
+  /* vision */
+  .vision{
+    background:var(--rice-soft);
+    border-top:1px solid var(--paper-line);
+    border-bottom:1px solid var(--paper-line);
+  }
+  .vision-grid{
+    display:grid; grid-template-columns: 1.1fr 1fr; gap:clamp(30px,5vw,72px); align-items:start;
+  }
+  blockquote.pull{
+    margin:0; font-family:"Shippori Mincho B1", serif;
+    font-size:clamp(1.5rem,3.4vw,2.15rem);
+    line-height:1.6; font-weight:700; color:var(--indigo-deep);
+    text-wrap:balance;
+  }
+  .vision-body p{color:var(--ink-soft); margin:0 0 16px;}
+  .vision-body p:last-child{margin-bottom:0;}
+
+  /* company table */
+  .company-table{
+    width:100%; border-collapse:collapse;
+    font-size:.95rem;
+  }
+  .company-table tr{border-top:1px solid var(--paper-line);}
+  .company-table tr:last-child{border-bottom:1px solid var(--paper-line);}
+  .company-table th,.company-table td{
+    text-align:left; padding:18px 8px; vertical-align:top;
+  }
+  .company-table th{
+    width:9em; color:var(--ink-soft); font-weight:500; letter-spacing:.04em;
+  }
+  .company-table td{color:var(--ink); font-weight:500;}
+  .tag-progress{
+    display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.06em;
+    color:var(--vermillion); border:1px solid var(--vermillion);
+    padding:2px 9px; border-radius:999px; margin-left:10px; transform:translateY(-1px);
+  }
+
+  /* contact */
+  .contact-box{
+    background:var(--indigo-deep); color:var(--rice);
+    border-radius:18px;
+    padding:clamp(32px,6vw,56px);
+    display:flex; flex-wrap:wrap; gap:28px; align-items:center; justify-content:space-between;
+    box-shadow:var(--shadow);
+  }
+  :root[data-theme="dark"] .contact-box, @media (prefers-color-scheme:dark){ }
+  .contact-box h2{color:var(--rice); margin:0 0 10px; font-size:1.4rem;}
+  .contact-box p{color:color-mix(in srgb, var(--rice) 78%, transparent); margin:0; max-width:40ch;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--vermillion); color:#fff;
+    text-decoration:none; font-weight:700; font-size:.92rem;
+    padding:14px 26px; border-radius:999px;
+    white-space:nowrap;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn:focus-visible{outline:2px solid var(--rice); outline-offset:3px;}
+
+  footer.site{
+    padding:32px 0 48px;
+    border-top:1px solid var(--paper-line);
+    margin-top:8px;
+  }
+  .footer-row{
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;
+    font-size:.8rem; color:var(--ink-soft);
+  }
+
+  @media (max-width:760px){
+    .vision-grid{grid-template-columns:1fr;}
+    .navlinks{display:none;}
+    .hero-rings{display:none;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .btn{transition:none;}
+  }
+</style>
+
+<header class="site">
+  <nav class="nav wrap">
+    <a class="brandmark" href="#top" aria-label="doradora トップへ">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="20" cy="27" rx="16" ry="10" fill="var(--indigo-deep)"/>
+        <ellipse cx="20" cy="14" rx="10.5" ry="7" fill="var(--indigo)"/>
+        <circle cx="20" cy="5.5" r="2.6" fill="var(--vermillion)"/>
+      </svg>
+      <span class="word">doradora</span>
+    </a>
+    <ul class="navlinks">
+      <li><a href="#business">事業内容</a></li>
+      <li><a href="#vision">私たちの想い</a></li>
+      <li><a href="#company">会社概要</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <svg class="hero-rings" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="200" cy="200" r="60" stroke="var(--vermillion)" stroke-opacity=".35" stroke-width="1.5"/>
+      <circle cx="200" cy="200" r="110" stroke="var(--gold)" stroke-opacity=".3" stroke-width="1.5"/>
+      <circle cx="200" cy="200" r="160" stroke="var(--indigo)" stroke-opacity=".25" stroke-width="1.5"/>
+      <circle cx="200" cy="200" r="198" stroke="var(--paper-line)" stroke-width="1.5"/>
+    </svg>
+    <div class="wrap hero-inner">
+      <span class="eyebrow">Coming Soon &mdash; 株式会社doradora(設立準備中)</span>
+      <h1 class="headline">ドラを鳴らす、<br>心を鳴らす。</h1>
+      <p class="lead">杵の音に鼓動を重ね、餅づくりという日本の伝統を、品質と体験価値の両立でもう一度主役に。doradoraは、これから始まる和菓子ブランドです。</p>
+      <div class="hero-meta">
+        <span><strong>事業</strong>&nbsp; 餅の製造・販売、体験型店舗の企画運営</span>
+        <span><strong>現在地</strong>&nbsp; 会社設立準備中</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="business">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Our Business</span>
+        <h2 class="section-title">事業内容</h2>
+        <p>doradoraが大切にする3つの軸。餅という素材の可能性を、製法・体験・文化の3方向から広げていきます。</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="num">01</span>
+          <h3>匠の製法</h3>
+          <p>厳選した餅米と、杵つきによる昔ながらの製法にこだわります。効率より、味と食感を優先します。</p>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <h3>体験価値</h3>
+          <p>見て、聞いて、味わう。餅つきの躍動感そのものを、店頭や催事でお客様に届けます。</p>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3>文化の継承</h3>
+          <p>一過性の流行で終わらせず、餅つきという日本の伝統を次の世代へつないでいきます。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="vision" id="vision">
+    <div class="wrap vision-grid">
+      <blockquote class="pull">「もう一度、<br>餅を主役に。」</blockquote>
+      <div class="vision-body">
+        <p>餅は、日本の暮らしの節目に寄り添ってきた食べものです。お正月、お祝いの席、ちょっとした差し入れ。doradoraは、その当たり前にあった存在を、あらためて主役に据えることから始めます。</p>
+        <p>効率化が進む時代だからこそ、杵と臼が生む音・湯気・手触りには価値があると考えています。品質への こだわりと、体験としての楽しさ。その両方を欠かさずに事業を育てていきます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="company">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Company</span>
+        <h2 class="section-title">会社概要</h2>
+      </div>
+      <table class="company-table">
+        <tr>
+          <th>商号</th>
+          <td>株式会社doradora <span class="tag-progress">設立準備中</span></td>
+        </tr>
+        <tr>
+          <th>事業内容</th>
+          <td>和菓子(餅)の製造・販売、体験型店舗の企画・運営</td>
+        </tr>
+        <tr>
+          <th>設立</th>
+          <td>準備中</td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>準備中</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <div>
+          <h2>お取引・お問い合わせ</h2>
+          <p>事業提携やお取引に関するお問い合わせは、下記までご連絡ください。</p>
+        </div>
+        <a class="btn" href="mailto:info@ninegates.online">
+          お問い合わせはこちら
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-row">
+    <span>&copy; 2026 doradora Co., Ltd. (設立準備中)</span>
+    <span>本サイトは設立準備段階の情報を掲載しています。</span>
+  </div>
+</footer>
