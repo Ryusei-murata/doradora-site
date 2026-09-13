@@ -145,8 +145,9 @@
   }
   .section-note{color:var(--ink-soft); margin:0 0 28px; max-width:52ch; font-size:.94rem;}
 
-  .sns-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(24px,4vw,48px); align-items:start;}
+  .sns-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,4vw,48px); align-items:start;}
   @media (max-width:820px){ .sns-grid{grid-template-columns:1fr;} }
+  .sns-col{display:flex; flex-direction:column;}
 
   .embed-frame{
     background:var(--surface); border:1px solid var(--paper-line); border-radius:18px;
@@ -155,6 +156,12 @@
   }
 
   .ig-frame{flex-direction:column; align-items:stretch; gap:16px;}
+  .ig-video-clip{position:relative; max-height:300px; overflow:hidden; border-radius:12px;}
+  .ig-video-clip::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:64px;
+    background:linear-gradient(to bottom, transparent, var(--surface));
+    pointer-events:none;
+  }
   .ig-profile{
     display:flex; align-items:center; gap:14px; text-decoration:none; color:inherit;
   }
@@ -237,12 +244,12 @@
 
   <section>
     <div class="wrap sns-grid">
-      <div>
+      <div class="sns-col">
         <span class="kicker">TikTok</span>
         <h2 class="section-title">@rickson_anpa</h2>
         <p class="section-note">ショート動画での発信はこちら。フォローして最新の投稿をチェックしてください。</p>
         <div class="embed-frame">
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@rickson_anpa" data-unique-id="rickson_anpa" data-embed-from="oembed" data-embed-type="creator" style="max-width:780px; min-width:288px;">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@rickson_anpa" data-unique-id="rickson_anpa" data-embed-from="oembed" data-embed-type="creator" style="max-width:100%; min-width:288px; width:100%; margin:0;">
             <section>
               <a target="_blank" rel="noopener" href="https://www.tiktok.com/@rickson_anpa?refer=creator_embed">@rickson_anpa</a>
             </section>
@@ -251,7 +258,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="sns-col">
         <span class="kicker">Instagram</span>
         <h2 class="section-title">@rickson.anpa</h2>
         <p class="section-note">写真・お知らせの発信はこちら。フォローして最新の投稿をチェックしてください。</p>
@@ -270,10 +277,12 @@
             </span>
           </a>
           <p class="ig-bio">29歳、現役教師🧑‍🏫<br>趣味と特技はナンパです🐺<br>日常をあげていきます！(フォロワー増えたら続き載せていきます☺)</p>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcasyaFROIp/" data-instgrm-version="14" style="max-width:100%; min-width:288px; width:100%; margin:0;">
-            <a target="_blank" rel="noopener" href="https://www.instagram.com/reel/DcasyaFROIp/">@rickson.anpaの投稿を見る</a>
-          </blockquote>
-          <script async src="//www.instagram.com/embed.js"></script>
+          <div class="ig-video-clip">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcasyaFROIp/" data-instgrm-version="14" style="max-width:100%; min-width:288px; width:100%; margin:0;">
+              <a target="_blank" rel="noopener" href="https://www.instagram.com/reel/DcasyaFROIp/">@rickson.anpaの投稿を見る</a>
+            </blockquote>
+            <script async src="//www.instagram.com/embed.js"></script>
+          </div>
           <a class="ig-open-btn" href="https://www.instagram.com/rickson.anpa/" target="_blank" rel="noopener">Instagramを開く</a>
         </div>
       </div>
