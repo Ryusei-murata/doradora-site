@@ -145,7 +145,8 @@
   }
   .section-note{color:var(--ink-soft); margin:0 0 28px; max-width:52ch; font-size:.94rem;}
 
-  .sns-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:clamp(24px,4vw,48px); align-items:start;}
+  .sns-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,4vw,48px); align-items:start;}
+  @media (max-width:640px){ .sns-grid{grid-template-columns:1fr;} }
   .sns-col{display:flex; flex-direction:column;}
 
   .embed-frame{
