@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>doradora | SNS</title>
-<meta name="description" content="doradoraの公式SNSアカウント(TikTok・Instagram)のご案内ページです。">
+<meta name="description" content="doradoraの公式SNSアカウント(TikTok・Instagram・lit.link)のご案内ページです。">
 <meta property="og:title" content="doradora | SNS">
-<meta property="og:description" content="doradoraのTikTok・Instagramはこちらから。">
+<meta property="og:description" content="doradoraのTikTok・Instagram・lit.linkはこちらから。">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='18' fill='none' stroke='%23B08A4E' stroke-width='2.6'/%3E%3Ccircle cx='20' cy='20' r='10.6' fill='none' stroke='%23B08A4E' stroke-width='2.6'/%3E%3Ccircle cx='20' cy='20' r='3.4' fill='%23B08A4E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -145,8 +145,9 @@
   }
   .section-note{color:var(--ink-soft); margin:0 0 28px; max-width:52ch; font-size:.94rem;}
 
-  .sns-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,4vw,48px); align-items:start;}
-  @media (max-width:820px){ .sns-grid{grid-template-columns:1fr;} }
+  .sns-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(24px,4vw,48px); align-items:start;}
+  @media (max-width:1000px){ .sns-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:640px){ .sns-grid{grid-template-columns:1fr;} }
   .sns-col{display:flex; flex-direction:column;}
 
   .embed-frame{
@@ -156,12 +157,11 @@
   }
 
   .ig-frame{flex-direction:column; align-items:stretch; gap:16px;}
-  .ig-video-clip{position:relative; max-height:195px; overflow:hidden; border-radius:12px;}
-  .ig-video-clip::after{
-    content:""; position:absolute; left:0; right:0; bottom:0; height:64px;
-    background:linear-gradient(to bottom, transparent, var(--surface));
-    pointer-events:none;
-  }
+  .ig-frame-lg{padding:clamp(28px,5vw,40px); gap:20px;}
+  .ig-frame-lg .ig-avatar{width:68px; height:68px;}
+  .ig-frame-lg .ig-id strong{font-size:1.1rem;}
+  .ig-frame-lg .ig-bio{font-size:.94rem;}
+  .ig-frame-lg .ig-open-btn{padding:14px 22px; font-size:.95rem;}
   .ig-profile{
     display:flex; align-items:center; gap:14px; text-decoration:none; color:inherit;
   }
@@ -170,8 +170,11 @@
     display:flex; align-items:center; justify-content:center;
     background:linear-gradient(135deg,#4f5bd5,#962fbf,#d62976,#fa7e1e,#feda75);
   }
+  .litlink-avatar{background:linear-gradient(135deg, var(--indigo-deep), var(--gold));}
   .ig-id strong{display:block; font-size:1rem; font-weight:700;}
-  .ig-stats{display:flex; gap:10px; font-size:.82rem; color:var(--ink-soft); margin-top:2px;}
+  .ig-stats{display:flex; flex-wrap:wrap; gap:4px 10px; font-size:.82rem; color:var(--ink-soft); margin-top:2px;}
+  .ig-stats span{white-space:nowrap;}
+  .ig-id{min-width:0;}
   .ig-bio{margin:0; font-size:.86rem; color:var(--ink-soft); line-height:1.7;}
   .ig-open-btn{
     display:inline-flex; align-items:center; justify-content:center; gap:8px; align-self:stretch;
@@ -238,7 +241,7 @@
     <div class="wrap">
       <span class="eyebrow">Follow doradora</span>
       <h1 class="page-title">SNS</h1>
-      <p class="lead">doradoraの日々の発信はTikTok・Instagramで。<br>餅づくりの様子や、<br>これからの歩みをお届けします。</p>
+      <p class="lead">doradoraの日々の発信はTikTok・Instagramで。<br>餅づくりの様子や、<br>これからの歩みをお届けします。<br>各種リンクはlit.linkにまとめています。</p>
     </div>
   </div>
 
@@ -246,12 +249,12 @@
     <div class="wrap sns-grid">
       <div class="sns-col">
         <span class="kicker">TikTok</span>
-        <h2 class="section-title">@rickson_anpa</h2>
+        <h2 class="section-title">@mochimochi_japan_</h2>
         <p class="section-note">ショート動画での発信はこちら。フォローして最新の投稿をチェックしてください。</p>
         <div class="embed-frame">
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@rickson_anpa" data-unique-id="rickson_anpa" data-embed-from="oembed" data-embed-type="creator" style="max-width:100%; min-width:288px; width:100%; margin:0;">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@mochimochi_japan_" data-unique-id="mochimochi_japan_" data-embed-from="oembed" data-embed-type="creator" style="max-width:100%; min-width:288px; width:100%; margin:0;">
             <section>
-              <a target="_blank" rel="noopener" href="https://www.tiktok.com/@rickson_anpa?refer=creator_embed">@rickson_anpa</a>
+              <a target="_blank" rel="noopener" href="https://www.tiktok.com/@mochimochi_japan_?refer=creator_embed">@mochimochi_japan_</a>
             </section>
           </blockquote>
           <script async src="https://www.tiktok.com/embed.js"></script>
@@ -260,30 +263,46 @@
 
       <div class="sns-col">
         <span class="kicker">Instagram</span>
-        <h2 class="section-title">@rickson.anpa</h2>
+        <h2 class="section-title">@mochimochi_japan_</h2>
         <p class="section-note">写真・お知らせの発信はこちら。フォローして最新の投稿をチェックしてください。</p>
-        <div class="embed-frame ig-frame">
-          <a class="ig-profile" href="https://www.instagram.com/rickson.anpa/" target="_blank" rel="noopener">
+        <div class="embed-frame ig-frame ig-frame-lg">
+          <a class="ig-profile" href="https://www.instagram.com/mochimochi_japan_/" target="_blank" rel="noopener">
             <span class="ig-avatar" aria-hidden="true">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="#fff" stroke-width="1.6"/>
                 <circle cx="12" cy="12" r="4.6" stroke="#fff" stroke-width="1.6"/>
                 <circle cx="17.7" cy="6.4" r="1.15" fill="#fff"/>
               </svg>
             </span>
             <span class="ig-id">
-              <strong>rickson.anpa</strong>
-              <span class="ig-stats"><span>投稿17</span><span>フォロワー2.1万</span><span>フォロー中0</span></span>
+              <strong>mochimochi_japan_</strong>
+              <span class="ig-stats"><span>投稿0</span><span>フォロワー0</span><span>フォロー中0</span></span>
             </span>
           </a>
-          <p class="ig-bio">29歳、現役教師🧑‍🏫<br>趣味と特技はナンパです🐺<br>日常をあげていきます！(フォロワー増えたら続き載せていきます☺)</p>
-          <div class="ig-video-clip">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcasyaFROIp/" data-instgrm-version="14" style="max-width:100%; min-width:288px; width:100%; margin:0;">
-              <a target="_blank" rel="noopener" href="https://www.instagram.com/reel/DcasyaFROIp/">@rickson.anpaの投稿を見る</a>
-            </blockquote>
-            <script async src="//www.instagram.com/embed.js"></script>
-          </div>
-          <a class="ig-open-btn" href="https://www.instagram.com/rickson.anpa/" target="_blank" rel="noopener">Instagramを開く</a>
+          <p class="ig-bio">Japanese traditional food<br>Please say "mochimochi"!</p>
+          <a class="ig-open-btn" href="https://www.instagram.com/mochimochi_japan_/" target="_blank" rel="noopener">Instagramを開く</a>
+        </div>
+      </div>
+
+      <div class="sns-col">
+        <span class="kicker">Link</span>
+        <h2 class="section-title">まとめリンク</h2>
+        <p class="section-note">お店・餅つき体験・お問い合わせなど、各種リンクをまとめています。</p>
+        <div class="embed-frame ig-frame">
+          <a class="ig-profile" href="https://lit.link/mochimochi_japan" target="_blank" rel="noopener">
+            <span class="ig-avatar litlink-avatar" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 13a4.5 4.5 0 0 0 6.5 1l2-2a4.5 4.5 0 0 0-6.36-6.36l-1.14 1.13" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 11a4.5 4.5 0 0 0-6.5-1l-2 2a4.5 4.5 0 0 0 6.36 6.36l1.13-1.13" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="ig-id">
+              <strong>mochimochi</strong>
+              <span class="ig-stats"><span>lit.link</span></span>
+            </span>
+          </a>
+          <p class="ig-bio">お品書きや餅つき体験のご案内、各SNSへのリンクをひとまとめにしたページです。</p>
+          <a class="ig-open-btn" href="https://lit.link/mochimochi_japan" target="_blank" rel="noopener">lit.linkを開く</a>
         </div>
       </div>
     </div>
