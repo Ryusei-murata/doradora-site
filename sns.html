@@ -145,9 +145,7 @@
   }
   .section-note{color:var(--ink-soft); margin:0 0 28px; max-width:52ch; font-size:.94rem;}
 
-  .sns-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(24px,4vw,48px); align-items:start;}
-  @media (max-width:1000px){ .sns-grid{grid-template-columns:1fr 1fr;} }
-  @media (max-width:640px){ .sns-grid{grid-template-columns:1fr;} }
+  .sns-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:clamp(24px,4vw,48px); align-items:start;}
   .sns-col{display:flex; flex-direction:column;}
 
   .embed-frame{
@@ -171,6 +169,7 @@
     background:linear-gradient(135deg,#4f5bd5,#962fbf,#d62976,#fa7e1e,#feda75);
   }
   .litlink-avatar{background:linear-gradient(135deg, var(--indigo-deep), var(--gold));}
+  .youtube-avatar{background:#B5482E;}
   .ig-id strong{display:block; font-size:1rem; font-weight:700;}
   .ig-stats{display:flex; flex-wrap:wrap; gap:4px 10px; font-size:.82rem; color:var(--ink-soft); margin-top:2px;}
   .ig-stats span{white-space:nowrap;}
@@ -303,6 +302,28 @@
           </a>
           <p class="ig-bio">お品書きや餅つき体験のご案内、各SNSへのリンクをひとまとめにしたページです。</p>
           <a class="ig-open-btn" href="https://lit.link/mochimochi_japan" target="_blank" rel="noopener">lit.linkを開く</a>
+        </div>
+      </div>
+
+      <div class="sns-col">
+        <span class="kicker">YouTube</span>
+        <h2 class="section-title">mochimochi JP🇯🇵</h2>
+        <p class="section-note">餅つきの様子などを動画でお届けします。チャンネル登録してお待ちください。</p>
+        <div class="embed-frame ig-frame">
+          <a class="ig-profile" href="https://www.youtube.com/@mochimochi_Japan_mochi" target="_blank" rel="noopener">
+            <span class="ig-avatar youtube-avatar" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.6 7.2c-.25-1.4-1.32-2.47-2.72-2.72C16.9 4 12 4 12 4s-4.9 0-6.88.48C3.72 4.73 2.65 5.8 2.4 7.2 2 9.18 2 12 2 12s0 2.82.4 4.8c.25 1.4 1.32 2.47 2.72 2.72C7.1 20 12 20 12 20s4.9 0 6.88-.48c1.4-.25 2.47-1.32 2.72-2.72.4-1.98.4-4.8.4-4.8s0-2.82-.4-4.8Z" fill="#fff"/>
+                <path d="M10 15.2 15.2 12 10 8.8v6.4Z" fill="#B5482E"/>
+              </svg>
+            </span>
+            <span class="ig-id">
+              <strong>mochimochi JP🇯🇵</strong>
+              <span class="ig-stats"><span>@mochimochi_Japan_mochi</span></span>
+            </span>
+          </a>
+          <p class="ig-bio">これから動画を公開予定です。餅つき体験や制作の裏側をお届けします。</p>
+          <a class="ig-open-btn" href="https://www.youtube.com/@mochimochi_Japan_mochi" target="_blank" rel="noopener">YouTubeを開く</a>
         </div>
       </div>
     </div>
