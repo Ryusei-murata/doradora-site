@@ -305,6 +305,9 @@
   }
   .btn:hover{transform:translateY(-2px);}
   .btn:focus-visible{outline:2px solid var(--rice); outline-offset:3px;}
+  .btn-group{display:flex; flex-direction:column; align-items:stretch; gap:12px;}
+  .btn-group .btn{justify-content:center;}
+  .btn-outline{background:transparent; color:var(--rice); border:1px solid color-mix(in srgb, var(--rice) 55%, transparent);}
 
   footer.site{
     padding:32px 0 48px;
@@ -575,12 +578,17 @@
     <div class="wrap">
       <div class="contact-box">
         <div>
-          <h2 data-i18n="contact.title">お取引・お問い合わせ</h2>
-          <p data-i18n="contact.lead">事業提携やお取引に関するお問い合わせは、下記までご連絡ください。</p>
+          <h2 data-i18n="contact.title">ご依頼・お問い合わせ</h2>
+          <p data-i18n="contact.lead">出張餅つき・イベントのご依頼は専用フォームから、事業提携やお取引に関するお問い合わせはメールでご連絡ください。</p>
         </div>
-        <a class="btn" href="mailto:info@ninegates.online" data-i18n="contact.btn">
-          お問い合わせはこちら
-        </a>
+        <div class="btn-group">
+          <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSet2ofuuH9AYNXEKwKKkR4hgA_GPTpr-o0CoswQPHhhUe0y4w/viewform" target="_blank" rel="noopener" data-i18n="contact.formBtn">
+            出張餅つき・イベントのご依頼
+          </a>
+          <a class="btn btn-outline" href="mailto:info@ninegates.online" data-i18n="contact.btn">
+            お問い合わせはこちら
+          </a>
+        </div>
       </div>
     </div>
   </section>

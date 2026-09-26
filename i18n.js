@@ -349,17 +349,21 @@
     },
 
     "contact.title": {
-      ja:"お取引・お問い合わせ", en:"Business Inquiries", "zh-cn":"合作与咨询", "zh-tw":"合作與洽詢",
-      ko:"거래 및 문의", fr:"Partenariats et contact", es:"Negocios y contacto"
+      ja:"ご依頼・お問い合わせ", en:"Bookings & Inquiries", "zh-cn":"委托与咨询", "zh-tw":"委託與洽詢",
+      ko:"의뢰 및 문의", fr:"Réservations et contact", es:"Reservas y contacto"
     },
     "contact.lead": {
-      ja:"事業提携やお取引に関するお問い合わせは、下記までご連絡ください。",
-      en:"For business partnerships or trade inquiries, please contact us below.",
-      "zh-cn":"如有业务合作或交易相关咨询，请通过下方方式与我们联系。",
-      "zh-tw":"如有業務合作或交易相關洽詢，請透過下方方式與我們聯繫。",
-      ko:"사업 제휴나 거래 관련 문의는 아래로 연락해 주세요.",
-      fr:"Pour toute demande de partenariat ou de transaction commerciale, veuillez nous contacter ci-dessous.",
-      es:"Para consultas sobre asociaciones comerciales o negocios, contáctenos a continuación."
+      ja:"出張餅つき・イベントのご依頼は専用フォームから、事業提携やお取引に関するお問い合わせはメールでご連絡ください。",
+      en:"For mochi-pounding events and bookings, please use our request form. For business partnerships or trade inquiries, please contact us by email.",
+      "zh-cn":"上门捣年糕及活动委托请通过专用表单提交；业务合作或交易相关咨询请通过邮件与我们联系。",
+      "zh-tw":"到府搗年糕及活動委託請透過專用表單提交；業務合作或交易相關洽詢請透過電子郵件與我們聯繫。",
+      ko:"출장 떡메치기·이벤트 의뢰는 전용 폼으로, 사업 제휴나 거래 관련 문의는 이메일로 연락해 주세요.",
+      fr:"Pour les animations de pilage de mochi et les événements, utilisez notre formulaire. Pour les partenariats ou demandes commerciales, contactez-nous par e-mail.",
+      es:"Para eventos y reservas de machacado de mochi, use nuestro formulario. Para asociaciones o consultas comerciales, contáctenos por correo electrónico."
+    },
+    "contact.formBtn": {
+      ja:"出張餅つき・イベントのご依頼", en:"Book a Mochi Event", "zh-cn":"预约捣年糕活动", "zh-tw":"預約搗年糕活動",
+      ko:"떡메치기 이벤트 의뢰", fr:"Réserver un événement mochi", es:"Reservar un evento de mochi"
     },
     "contact.btn": {
       ja:"お問い合わせはこちら", en:"Contact Us", "zh-cn":"点击联系我们", "zh-tw":"點擊聯繫我們",
