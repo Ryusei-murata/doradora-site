@@ -273,6 +273,9 @@ footer{padding-block:36px 48px;color:var(--sumi-soft);font-size:.86rem}
 .foot-row .logo{font-size:1.1rem;color:var(--sumi)}
 
 :lang(ko) h1,:lang(ko) h2,:lang(ko) h3{word-break:keep-all}
+/* scroll reveal — only applied by JS to elements below the fold */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rv-d,0s)}
+.rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
@@ -719,6 +722,27 @@ footer{padding-block:36px 48px;color:var(--sumi-soft);font-size:.86rem}
   LANGS.forEach(function(l){ var o=document.createElement("option"); o.value=l; o.textContent=NAMES[l]; sel.appendChild(o); });
   sel.addEventListener("change", function(){ put(sel.value); apply(sel.value); });
   apply(detect());
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  if (!("IntersectionObserver" in window)) return;
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var groups = [".section-head", ".shots .shot", ".steps .step", ".menu-grid .item", ".formats .format", ".deal > *", ".faq-list details", ".contact-card", ".next-row"];
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+  var fold = window.innerHeight;
+  groups.forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(el){
+      var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+      if (el.getBoundingClientRect().top < fold) return; // already on screen: leave visible
+      el.style.setProperty("--rv-d", (Math.min(i, 5) * 0.09) + "s");
+      el.classList.add("rv");
+      io.observe(el);
+    });
+  });
 })();
 </script>
 
