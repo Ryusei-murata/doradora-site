@@ -88,6 +88,7 @@
   .brandmark{display:flex; align-items:center; gap:10px; text-decoration:none;}
   .brandmark svg{width:30px; height:30px; display:block;}
   .brandmark .word{font-family:"Shippori Mincho B1", serif; font-size:1.15rem; font-weight:700; letter-spacing:.06em;}
+  .nav-right{display:flex; align-items:center; gap:16px;}
   .navlinks{display:flex; flex-wrap:wrap; gap:10px clamp(14px,2.4vw,26px); list-style:none; margin:0; padding:0;}
   .navlinks a{
     text-decoration:none; font-size:.86rem; font-weight:500; color:var(--ink-soft);
@@ -207,13 +208,35 @@
     .navlinks a{display:block; padding:10px 0; border-bottom:1px solid var(--paper-line);}
     .navlinks li:last-child a{border-bottom:none;}
   }
+
+  .lang-switch{position:relative;}
+  .lang-switch-toggle{
+    display:inline-flex; align-items:center; gap:6px;
+    background:transparent; border:1px solid var(--paper-line); border-radius:999px;
+    padding:6px 12px; font-size:.78rem; font-weight:700; letter-spacing:.04em;
+    color:var(--ink-soft); cursor:pointer;
+  }
+  .lang-switch-toggle:hover, .lang-switch-toggle[aria-expanded="true"]{color:var(--vermillion); border-color:var(--vermillion);}
+  .lang-switch-menu{
+    display:none; position:absolute; top:calc(100% + 8px); right:0; z-index:50;
+    background:var(--surface); border:1px solid var(--paper-line); border-radius:12px;
+    box-shadow:var(--shadow); padding:6px; min-width:140px;
+  }
+  .lang-switch-menu.is-open{display:block;}
+  .lang-switch-menu button{
+    display:block; width:100%; text-align:left; background:none; border:none;
+    padding:8px 10px; border-radius:8px; font-size:.86rem; color:var(--ink);
+    cursor:pointer;
+  }
+  .lang-switch-menu button:hover{background:var(--rice-soft);}
+  .lang-switch-menu button.is-active{color:var(--vermillion); font-weight:700;}
 </style>
 </head>
-<body>
+<body data-i18n-page-title="sns.meta.title" data-i18n-page-desc="sns.meta.description" data-i18n-og-title="sns.meta.title" data-i18n-og-desc="sns.meta.ogDescription">
 
 <header class="site">
   <nav class="nav wrap">
-    <a class="brandmark" href="index.html" aria-label="doradora トップへ">
+    <a class="brandmark" href="index.html" data-i18n-aria="aria.brandHome" aria-label="doradora トップへ">
       <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle cx="20" cy="20" r="18.1" stroke="var(--gold)" stroke-width="1.9"/>
         <circle cx="20" cy="20" r="10.6" stroke="var(--gold)" stroke-width="1.9"/>
@@ -221,18 +244,21 @@
       </svg>
       <span class="word">doradora</span>
     </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navlinks" aria-label="メニューを開く">
-      <span></span>
-    </button>
-    <ul class="navlinks" id="navlinks">
-      <li><a href="index.html#business">事業内容</a></li>
-      <li><a href="index.html#strengths">選ばれる理由</a></li>
-      <li><a href="index.html#roadmap">歩み</a></li>
-      <li><a href="index.html#vision">私たちの想い</a></li>
-      <li><a href="index.html#company">会社概要</a></li>
-      <li><a href="sns.html" class="is-current">SNS</a></li>
-      <li><a href="index.html#contact">お問い合わせ</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="navlinks" id="navlinks">
+        <li><a href="index.html#business" data-i18n="nav.business">事業内容</a></li>
+        <li><a href="index.html#strengths" data-i18n="nav.strengths">選ばれる理由</a></li>
+        <li><a href="index.html#roadmap" data-i18n="nav.roadmap">歩み</a></li>
+        <li><a href="index.html#vision" data-i18n="nav.vision">私たちの想い</a></li>
+        <li><a href="index.html#company" data-i18n="nav.company">会社概要</a></li>
+        <li><a href="sns.html" class="is-current">SNS</a></li>
+        <li><a href="index.html#contact" data-i18n="nav.contact">お問い合わせ</a></li>
+      </ul>
+      <div class="lang-switch"></div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navlinks" data-i18n-aria="aria.menuOpen" aria-label="メニューを開く">
+        <span></span>
+      </button>
+    </div>
   </nav>
 </header>
 
@@ -241,7 +267,7 @@
     <div class="wrap">
       <span class="eyebrow">Follow doradora</span>
       <h1 class="page-title">SNS</h1>
-      <p class="lead">doradoraの日々の発信はTikTok・Instagramで。<br>餅づくりの様子や、<br>これからの歩みをお届けします。</p>
+      <p class="lead" data-i18n-html="sns.lead">doradoraの日々の発信はTikTok・Instagramで。<br>餅づくりの様子や、<br>これからの歩みをお届けします。</p>
     </div>
   </div>
 
@@ -250,7 +276,7 @@
       <div class="sns-col">
         <span class="kicker">TikTok</span>
         <h2 class="section-title">@mochimochi_japan_</h2>
-        <p class="section-note">ショート動画での発信はこちら。フォローして最新の投稿をチェックしてください。</p>
+        <p class="section-note" data-i18n="sns.tiktok.note">ショート動画での発信はこちら。フォローして最新の投稿をチェックしてください。</p>
         <div class="embed-frame">
           <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@mochimochi_japan_" data-unique-id="mochimochi_japan_" data-embed-from="oembed" data-embed-type="creator" style="max-width:100%; min-width:288px; width:100%; margin:0;">
             <section>
@@ -264,7 +290,7 @@
       <div class="sns-col">
         <span class="kicker">Instagram</span>
         <h2 class="section-title">@mochimochi_japan_</h2>
-        <p class="section-note">写真・お知らせの発信はこちら。フォローして最新の投稿をチェックしてください。</p>
+        <p class="section-note" data-i18n="sns.instagram.note">写真・お知らせの発信はこちら。フォローして最新の投稿をチェックしてください。</p>
         <div class="embed-frame ig-frame ig-frame-lg">
           <a class="ig-profile" href="https://www.instagram.com/mochimochi_japan_/" target="_blank" rel="noopener">
             <span class="ig-avatar" aria-hidden="true">
@@ -276,18 +302,18 @@
             </span>
             <span class="ig-id">
               <strong>mochimochi_japan_</strong>
-              <span class="ig-stats"><span>投稿0</span><span>フォロワー0</span><span>フォロー中0</span></span>
+              <span class="ig-stats"><span data-i18n="sns.instagram.statPosts">投稿0</span><span data-i18n="sns.instagram.statFollowers">フォロワー0</span><span data-i18n="sns.instagram.statFollowing">フォロー中0</span></span>
             </span>
           </a>
           <p class="ig-bio">Japanese traditional food<br>Please say "mochimochi"!</p>
-          <a class="ig-open-btn" href="https://www.instagram.com/mochimochi_japan_/" target="_blank" rel="noopener">Instagramを開く</a>
+          <a class="ig-open-btn" href="https://www.instagram.com/mochimochi_japan_/" target="_blank" rel="noopener" data-i18n="sns.instagram.openBtn">Instagramを開く</a>
         </div>
       </div>
 
       <div class="sns-col">
-        <span class="kicker">Link</span>
-        <h2 class="section-title">まとめリンク</h2>
-        <p class="section-note">お店・餅つき体験・お問い合わせなど、各種リンクをまとめています。</p>
+        <span class="kicker" data-i18n="sns.link.kicker">Link</span>
+        <h2 class="section-title" data-i18n="sns.link.title">まとめリンク</h2>
+        <p class="section-note" data-i18n="sns.link.note">お店・餅つき体験・お問い合わせなど、各種リンクをまとめています。</p>
         <div class="embed-frame ig-frame">
           <a class="ig-profile" href="https://lit.link/mochimochi_japan" target="_blank" rel="noopener">
             <span class="ig-avatar litlink-avatar" aria-hidden="true">
@@ -301,15 +327,15 @@
               <span class="ig-stats"><span>lit.link</span></span>
             </span>
           </a>
-          <p class="ig-bio">お品書きや餅つき体験のご案内、各SNSへのリンクをひとまとめにしたページです。</p>
-          <a class="ig-open-btn" href="https://lit.link/mochimochi_japan" target="_blank" rel="noopener">lit.linkを開く</a>
+          <p class="ig-bio" data-i18n="sns.link.bio">お品書きや餅つき体験のご案内、各SNSへのリンクをひとまとめにしたページです。</p>
+          <a class="ig-open-btn" href="https://lit.link/mochimochi_japan" target="_blank" rel="noopener" data-i18n="sns.link.openBtn">lit.linkを開く</a>
         </div>
       </div>
 
       <div class="sns-col">
         <span class="kicker">YouTube</span>
         <h2 class="section-title">mochimochi JP🇯🇵</h2>
-        <p class="section-note">餅つきの様子などを動画でお届けします。チャンネル登録してお待ちください。</p>
+        <p class="section-note" data-i18n="sns.youtube.note">餅つきの様子などを動画でお届けします。チャンネル登録してお待ちください。</p>
         <div class="embed-frame ig-frame">
           <a class="ig-profile" href="https://www.youtube.com/@mochimochi_Japan_mochi" target="_blank" rel="noopener">
             <span class="ig-avatar youtube-avatar" aria-hidden="true">
@@ -323,8 +349,8 @@
               <span class="ig-stats"><span>@mochimochi_Japan_mochi</span></span>
             </span>
           </a>
-          <p class="ig-bio">これから動画を公開予定です。餅つき体験や制作の裏側をお届けします。</p>
-          <a class="ig-open-btn" href="https://www.youtube.com/@mochimochi_Japan_mochi" target="_blank" rel="noopener">YouTubeを開く</a>
+          <p class="ig-bio" data-i18n="sns.youtube.bio">これから動画を公開予定です。餅つき体験や制作の裏側をお届けします。</p>
+          <a class="ig-open-btn" href="https://www.youtube.com/@mochimochi_Japan_mochi" target="_blank" rel="noopener" data-i18n="sns.youtube.openBtn">YouTubeを開く</a>
         </div>
       </div>
     </div>
@@ -333,8 +359,8 @@
 
 <footer class="site">
   <div class="wrap footer-row">
-    <span>&copy; 2026 doradora Co., Ltd. (設立準備中)</span>
-    <span>本サイトは設立準備段階の情報を掲載しています。</span>
+    <span>&copy; 2026 doradora Co., Ltd. <span data-i18n="footer.copyrightSuffix">(設立準備中)</span></span>
+    <span data-i18n="footer.note">本サイトは設立準備段階の情報を掲載しています。</span>
   </div>
 </footer>
 
@@ -355,5 +381,6 @@
     });
   })();
 </script>
+<script src="i18n.js"></script>
 </body>
 </html>
