@@ -743,6 +743,17 @@ footer{padding-block:36px 48px;color:var(--sumi-soft);font-size:.86rem}
       io.observe(el);
     });
   });
+  // fallback: reveal by position on scroll, in case the observer doesn't fire
+  var ticking = false;
+  function check(){
+    ticking = false;
+    var lim = window.innerHeight * 0.95;
+    document.querySelectorAll(".rv:not(.in)").forEach(function(el){
+      if (el.getBoundingClientRect().top < lim){ el.classList.add("in"); io.unobserve(el); }
+    });
+  }
+  window.addEventListener("scroll", function(){ if (!ticking){ ticking = true; setTimeout(check, 120); } }, { passive: true });
+  window.addEventListener("resize", check);
 })();
 </script>
 
