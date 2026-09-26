@@ -365,6 +365,10 @@
       ja:"出張餅つき・イベントのご依頼", en:"Book a Mochi Event", "zh-cn":"预约捣年糕活动", "zh-tw":"預約搗年糕活動",
       ko:"떡메치기 이벤트 의뢰", fr:"Réserver un événement mochi", es:"Reservar un evento de mochi"
     },
+    "contact.lpBtn": {
+      ja:"出張餅つきの詳細を見る", en:"About our mochi pop-up", "zh-cn":"了解捣年糕快闪店", "zh-tw":"了解搗麻糬快閃店",
+      ko:"떡메치기 팝업 자세히 보기", fr:"Découvrir notre pop-up mochi", es:"Conoce nuestro pop-up de mochi"
+    },
     "contact.btn": {
       ja:"お問い合わせはこちら", en:"Contact Us", "zh-cn":"点击联系我们", "zh-tw":"點擊聯繫我們",
       ko:"문의하기", fr:"Nous contacter", es:"Contáctenos"
