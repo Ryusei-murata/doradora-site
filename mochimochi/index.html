@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://ninegates.online/mochimochi/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ninegates.online/mochimochi/">
+<meta property="og:title" content="mochimochi — Live mochi pounding pop-up">
+<meta property="og:description" content="Fresh-pounded mochi, live in your city. Book the mochimochi pop-up for your venue.">
+<meta property="og:image" content="https://ninegates.online/mochimochi/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/hero.webp">
+<title>mochimochi Pop-Up</title>
+<meta name="description" content="Live mochi pounding from Tokyo — book the mochimochi pop-up for your venue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --kinari:#FCF7ED;
+  --kinari-2:#F4E9D3;
+  --paper:#FFFDF8;
+  --shu:#D13729;
+  --shu-deep:#A8281D;
+  --ai:#21384A;
+  --ai-2:#2B4960;
+  --kin:#DD9D2F;
+  --sumi:#2A2320;
+  --sumi-soft:#5F5349;
+  --on-ai:#F6EEDD;
+  --on-ai-soft:#C9D2D6;
+  --line:rgba(42,35,32,.16);
+  --display:"Shippori Mincho B1","Hiragino Mincho ProN","Songti SC","Songti TC","AppleMyungjo","Noto Serif CJK JP",Georgia,serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","PingFang SC","PingFang TC","Apple SD Gothic Neo","Noto Sans CJK JP",system-ui,sans-serif;
+  --wrap:1120px;
+  --gut:clamp(16px,4vw,40px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--kinari);color:var(--sumi);
+  font-family:var(--body);font-size:16px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--kin);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.2;margin:0;text-wrap:balance;letter-spacing:.01em}
+p{margin:0}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--shu);
+}
+.eyebrow::before{content:"";width:.7em;height:.7em;border-radius:50%;background:var(--shu)}
+.section{padding-block:clamp(64px,9vw,112px)}
+.section-head{display:grid;gap:14px;max-width:44rem;margin-bottom:clamp(32px,5vw,56px)}
+.section-head h2{font-size:clamp(1.8rem,3.8vw,2.7rem)}
+.section-head p{color:var(--sumi-soft);font-size:1.05rem}
+
+/* buttons: lit.link style — ink border + offset shadow */
+.btn{
+  --bg:var(--shu);--fg:#fff;
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  padding:.85em 1.5em;border:2px solid var(--sumi);border-radius:999px;
+  background:var(--bg);color:var(--fg);font-weight:700;text-decoration:none;
+  box-shadow:4px 4px 0 var(--sumi);transition:transform .15s ease, box-shadow .15s ease;
+  font-size:1rem;line-height:1.2;white-space:nowrap;
+}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--sumi)}
+.btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--sumi)}
+.btn.ghost{--bg:var(--paper);--fg:var(--sumi)}
+.btn.small{padding:.55em 1.1em;font-size:.9rem;box-shadow:3px 3px 0 var(--sumi)}
+
+/* header */
+.site-head{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
+  background:color-mix(in srgb,var(--kinari) 92%,transparent);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.head-row{display:flex;align-items:center;gap:20px;min-height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:.02em}
+.logo .sun{width:22px;height:22px;border-radius:50%;background:var(--shu);box-shadow:inset 0 -6px 0 var(--ai)}
+.nav{display:flex;gap:22px;margin-left:auto;font-size:.92rem;font-weight:500}
+.nav a{text-decoration:none;color:var(--sumi-soft)}
+.nav a:hover{color:var(--shu)}
+.lang{position:relative}
+.lang select{
+  appearance:none;-webkit-appearance:none;font:inherit;font-size:.88rem;font-weight:500;
+  background:var(--paper);color:var(--sumi);border:1.5px solid var(--sumi);border-radius:999px;
+  padding:.4em 2em .4em .95em;cursor:pointer;
+}
+.lang::after{content:"";position:absolute;right:.85em;top:50%;width:6px;height:6px;border-right:1.5px solid var(--sumi);border-bottom:1.5px solid var(--sumi);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+@media (max-width:880px){.nav{display:none}.lang{margin-left:auto}}
+@media (max-width:460px){.head-row .btn{display:none}}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,88px) clamp(40px,6vw,72px);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(2.3rem,5.6vw,4.3rem);margin-block:18px 22px}
+.hero h1 em{font-style:normal;color:var(--shu);background:linear-gradient(transparent 72%,color-mix(in srgb,var(--kin) 45%,transparent) 72%)}
+.hero .lead{font-size:clamp(1rem,1.5vw,1.12rem);color:var(--sumi-soft);max-width:34rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero-art{position:relative;display:flex;justify-content:center;align-items:center}
+.hero-art .disc{
+  width:min(100%,460px);aspect-ratio:1;border-radius:50%;overflow:hidden;
+  border:2px solid var(--sumi);box-shadow:8px 8px 0 var(--ai);background:var(--kinari);
+}
+.hero-art .disc img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+.stamp{
+  position:absolute;left:-4%;top:-2%;
+  writing-mode:vertical-rl;font-family:"Shippori Mincho B1",serif;font-weight:800;
+  font-size:clamp(2.6rem,7vw,5.2rem);line-height:1;color:var(--shu);letter-spacing:.04em;
+  text-shadow:3px 3px 0 var(--kinari),-3px -3px 0 var(--kinari),3px -3px 0 var(--kinari),-3px 3px 0 var(--kinari);
+  animation:thump 2.4s cubic-bezier(.3,1.6,.5,1) .3s both;
+}
+.seal{
+  position:absolute;right:2%;bottom:4%;width:92px;height:92px;border-radius:50%;
+  background:var(--shu);color:#fff;border:2px solid var(--sumi);
+  display:grid;place-items:center;text-align:center;font-weight:700;font-size:.72rem;line-height:1.25;letter-spacing:.06em;
+  transform:rotate(-10deg);box-shadow:3px 3px 0 var(--sumi);padding:10px;
+}
+@keyframes thump{0%{transform:scale(1.18)}18%{transform:scale(.96)}30%,100%{transform:scale(1)}}
+
+.specs{
+  display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(40px,6vw,64px);
+  border-block:1.5px solid var(--sumi);
+}
+.spec{padding:16px 18px;display:grid;gap:2px}
+.spec+.spec{border-left:1px solid var(--line)}
+.spec dt{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sumi-soft);font-weight:700}
+.spec dd{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(1.15rem,2.2vw,1.5rem);font-variant-numeric:tabular-nums}
+@media (max-width:760px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-art{order:-1;padding-inline:8%}
+  .specs{grid-template-columns:repeat(2,1fr)}
+  .spec:nth-child(3){border-left:0}
+  .spec:nth-child(n+3){border-top:1px solid var(--line)}
+}
+
+/* streets */
+.streets{background:var(--kinari-2);border-block:1px solid var(--line)}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2.4vw,28px)}
+.shot{margin:0;display:grid;gap:12px}
+.shot .frame{
+  aspect-ratio:3/4;overflow:hidden;border:2px solid var(--sumi);
+  border-radius:200px 200px 10px 10px;background:var(--ai);
+}
+.shot img{width:100%;height:100%;object-fit:cover}
+.shot figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-weight:700}
+.shot figcaption span{font-size:.78rem;color:var(--sumi-soft);font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media (max-width:640px){
+  .shots{grid-template-columns:repeat(3,72%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+  .shot{scroll-snap-align:start}
+}
+
+/* show steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:36px;border-top:2px dashed color-mix(in srgb,var(--sumi) 35%,transparent)}
+.step{position:relative;display:grid;gap:10px;padding-right:14px}
+.step .k{
+  width:72px;height:72px;border-radius:50%;display:grid;place-items:center;
+  background:var(--paper);border:2px solid var(--sumi);font-family:var(--display);font-weight:800;font-size:1.9rem;
+  position:relative;z-index:1;
+}
+.step:nth-child(2) .k{background:var(--shu);color:#fff}
+.step .n{font-size:.74rem;font-weight:700;letter-spacing:.12em;color:var(--shu)}
+.step h3{font-size:1.2rem}
+.step p{color:var(--sumi-soft);font-size:.95rem;line-height:1.65}
+.show-note{
+  margin-top:40px;display:flex;gap:14px;align-items:center;padding:16px 20px;
+  background:var(--paper);border:1.5px solid var(--sumi);border-radius:14px;max-width:44rem;
+}
+.show-note b{font-family:var(--display);font-size:1.4rem;color:var(--shu);white-space:nowrap}
+@media (max-width:860px){
+  .steps{grid-template-columns:1fr;gap:22px}
+  .steps::before{left:35px;right:auto;top:0;bottom:0;border-top:0;border-left:2px dashed color-mix(in srgb,var(--sumi) 35%,transparent)}
+  .step{grid-template-columns:72px 1fr;column-gap:18px;align-items:start}
+  .step .k{grid-row:span 3}
+}
+
+/* menu */
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,32px)}
+.item{
+  background:var(--paper);border:2px solid var(--sumi);border-radius:22px;
+  padding:clamp(20px,3vw,32px);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;
+}
+.item svg{width:clamp(96px,14vw,132px);height:auto}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.25em .8em;border-radius:999px;border:1.5px solid currentColor;color:var(--ai)}
+.item.local .tag{color:var(--shu)}
+.item h3{font-size:clamp(1.3rem,2.4vw,1.6rem);margin-block:10px 8px}
+.item p{color:var(--sumi-soft);font-size:.95rem}
+.item .price{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;color:var(--sumi)}
+.item .price span{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sumi-soft)}
+.item .price b{font-family:var(--display);font-size:1.05rem;color:var(--shu)}
+.menu-note{margin-top:22px;color:var(--sumi-soft);font-size:.92rem;max-width:44rem}
+@media (max-width:760px){.menu-grid{grid-template-columns:1fr}}
+@media (max-width:420px){.item{grid-template-columns:1fr}}
+
+/* hosts — indigo with seigaiha */
+.hosts{
+  --c:rgba(246,238,221,.07);--b:var(--ai);
+  background-color:var(--ai);color:var(--on-ai);
+  background-image:
+    radial-gradient(circle at 100% 150%,var(--b) 24%,var(--c) 24%,var(--c) 28%,var(--b) 28%,var(--b) 36%,var(--c) 36%,var(--c) 40%,transparent 40%,transparent),
+    radial-gradient(circle at 0 150%,var(--b) 24%,var(--c) 24%,var(--c) 28%,var(--b) 28%,var(--b) 36%,var(--c) 36%,var(--c) 40%,transparent 40%,transparent),
+    radial-gradient(circle at 50% 100%,var(--c) 10%,var(--b) 10%,var(--b) 23%,var(--c) 23%,var(--c) 30%,var(--b) 30%,var(--b) 43%,var(--c) 43%,var(--c) 50%,var(--b) 50%,var(--b) 63%,var(--c) 63%,var(--c) 71%,transparent 71%,transparent),
+    radial-gradient(circle at 100% 50%,var(--c) 5%,var(--b) 5%,var(--b) 15%,var(--c) 15%,var(--c) 20%,var(--b) 20%,var(--b) 29%,var(--c) 29%,var(--c) 34%,var(--b) 34%,var(--b) 44%,var(--c) 44%,var(--c) 49%,transparent 49%,transparent),
+    radial-gradient(circle at 0 50%,var(--c) 5%,var(--b) 5%,var(--b) 15%,var(--c) 15%,var(--c) 20%,var(--b) 20%,var(--b) 29%,var(--c) 29%,var(--c) 34%,var(--b) 34%,var(--b) 44%,var(--c) 44%,var(--c) 49%,transparent 49%,transparent);
+  background-size:100px 50px;
+}
+.hosts .eyebrow{color:var(--kin)}
+.hosts .eyebrow::before{background:var(--kin)}
+.hosts .section-head p{color:var(--on-ai-soft)}
+.formats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,20px)}
+.format{background:var(--ai-2);border:1px solid rgba(246,238,221,.18);border-radius:16px;padding:22px 22px 24px;display:grid;gap:8px;align-content:start}
+.format h3{font-size:1.2rem;color:#fff}
+.format p{color:var(--on-ai-soft);font-size:.95rem}
+.format .ic{font-family:var(--display);font-weight:800;font-size:1.05rem;color:var(--kin);letter-spacing:.08em}
+.deal{display:grid;grid-template-columns:1fr 1fr .85fr;gap:clamp(16px,3vw,36px);margin-top:clamp(36px,5vw,56px);align-items:start}
+.deal h3{font-size:1.15rem;color:#fff;padding-bottom:12px;margin-bottom:14px;border-bottom:1.5px solid var(--kin)}
+.deal ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.deal li{display:grid;grid-template-columns:18px 1fr;gap:10px;color:var(--on-ai);font-size:.97rem;line-height:1.6}
+.deal li::before{content:"";width:10px;height:10px;margin-top:.5em;border-radius:50%;background:var(--kin)}
+.deal .need li::before{background:transparent;border:2px solid var(--kin)}
+.cartcard{margin:0;background:var(--kinari);color:var(--sumi);border-radius:16px;overflow:hidden;border:2px solid var(--sumi)}
+.cartcard img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 70%}
+.cartcard figcaption{padding:14px 16px 16px;display:grid;gap:4px}
+.cartcard b{font-family:var(--display);font-size:1.1rem}
+.cartcard span{font-size:.9rem;color:var(--sumi-soft);line-height:1.55}
+@media (max-width:900px){.formats{grid-template-columns:1fr}.deal{grid-template-columns:1fr 1fr}.cartcard{grid-column:1/-1;display:grid;grid-template-columns:40% 1fr}.cartcard img{aspect-ratio:auto;height:100%}}
+@media (max-width:560px){.deal{grid-template-columns:1fr}.cartcard{grid-template-columns:1fr}.cartcard img{aspect-ratio:4/3}}
+
+/* next city */
+.next{background:var(--shu);color:#fff;border-bottom:2px solid var(--sumi)}
+.next-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px;padding-block:clamp(36px,5vw,52px)}
+.next h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
+.next p{opacity:.92;margin-top:8px;max-width:36rem}
+.next .btn{--bg:var(--paper);--fg:var(--sumi)}
+
+/* faq */
+.faq-list{display:grid;gap:12px;max-width:52rem}
+.faq-list details{background:var(--paper);border:1.5px solid var(--sumi);border-radius:14px;padding:0 20px}
+.faq-list summary{cursor:pointer;list-style:none;padding:18px 32px 18px 0;font-weight:700;position:relative}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--display);font-size:1.5rem;color:var(--shu)}
+.faq-list details[open] summary::after{content:"−"}
+.faq-list details p{padding-bottom:18px;color:var(--sumi-soft)}
+
+/* contact */
+.contact-card{
+  display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,4vw,48px);align-items:center;
+  background:var(--paper);border:2px solid var(--sumi);border-radius:28px;box-shadow:8px 8px 0 var(--ai);
+  padding:clamp(24px,5vw,56px);
+}
+.contact-card h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-block:14px 14px}
+.contact-card p{color:var(--sumi-soft)}
+.contact-side{display:grid;gap:18px;justify-items:start}
+.contact-side .btn{font-size:1.05rem}
+.follow{display:grid;gap:10px}
+.follow small{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sumi-soft);font-weight:700}
+.sns{display:flex;flex-wrap:wrap;gap:10px}
+.sns a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:.9rem;padding:.5em 1em;border:1.5px solid var(--sumi);border-radius:999px;background:var(--kinari)}
+.sns a:hover{background:var(--kinari-2)}
+.sns svg{width:16px;height:16px}
+@media (max-width:760px){.contact-card{grid-template-columns:1fr}}
+
+footer{padding-block:36px 48px;color:var(--sumi-soft);font-size:.86rem}
+.foot-row{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:24px}
+.foot-row .logo{font-size:1.1rem;color:var(--sumi)}
+
+:lang(ko) h1,:lang(ko) h2,:lang(ko) h3{word-break:keep-all}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="logo" href="#top"><span class="sun" aria-hidden="true"></span>mochimochi</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#show" data-i18n="nav.show">The Show</a>
+      <a href="#menu" data-i18n="nav.menu">Menu</a>
+      <a href="#hosts" data-i18n="nav.hosts">For Hosts</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <label class="lang"><span class="sr" hidden>Language</span>
+      <select id="lang-select" aria-label="Language"></select>
+    </label>
+    <a class="btn small" href="#contact" data-i18n="nav.book">Book a pop-up</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow" data-i18n="hero.eyebrow">Live mochi pounding from Tokyo</span>
+          <h1 data-i18n-html="hero.title">Fresh-pounded mochi,<br>live in <em>your city.</em></h1>
+          <p class="lead" data-i18n="hero.lead">A wooden mortar, a 90 cm mallet and a crew from Japan. We pound steamed rice into mochi right in front of your guests, wrap it around fresh fruit, and hand it over while it's still warm.</p>
+          <div class="cta-row">
+            <a class="btn" href="#contact" data-i18n="hero.cta1">Book a pop-up</a>
+            <a class="btn ghost" href="#streets" data-i18n="hero.cta2">See the show</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="disc"><img src="img/hero.webp" alt="Illustration: two mochi pounders in gold happi coats at a wooden mortar, with Mt. Fuji and a red sun behind them" width="760" height="760"></div>
+          <div class="stamp" aria-hidden="true">よいしょ！</div>
+          <div class="seal" data-i18n-html="hero.seal">Made<br>in front<br>of you</div>
+        </div>
+      </div>
+      <dl class="specs">
+        <div class="spec"><dt data-i18n="spec.l1">Wooden mortar</dt><dd data-i18n="spec.v1">3 shō · ~45 kg</dd></div>
+        <div class="spec"><dt data-i18n="spec.l2">Mallet</dt><dd data-i18n="spec.v2">90 cm</dd></div>
+        <div class="spec"><dt data-i18n="spec.l3">A show every</dt><dd data-i18n="spec.v3">30–60 min</dd></div>
+        <div class="spec"><dt data-i18n="spec.l4">Pop-up length</dt><dd data-i18n="spec.v4">3 days</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section streets" id="streets">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="streets.eyebrow">Field-tested</span>
+        <h2 data-i18n="streets.title">Already pounding on the streets of Tokyo.</h2>
+        <p data-i18n="streets.lead">Our mortar rides on a folding cart, so the show sets up anywhere — a waterfront deck, a shopping street, a crossing in Kabukicho.</p>
+      </div>
+      <div class="shots">
+        <figure class="shot"><div class="frame"><img src="img/odaiba.webp" alt="Mochi pounding on a waterfront deck in Odaiba with the Rainbow Bridge behind" loading="lazy"></div><figcaption><b data-i18n="streets.c1">Odaiba</b><span>2026.09</span></figcaption></figure>
+        <figure class="shot"><div class="frame"><img src="img/takeshita.webp" alt="Mochi pounding on Takeshita-dori in Harajuku, crowd with umbrellas" loading="lazy"></div><figcaption><b data-i18n="streets.c2">Harajuku, Takeshita-dori</b><span>2026.09</span></figcaption></figure>
+        <figure class="shot"><div class="frame"><img src="img/kabuki.webp" alt="Mochi pounding at a crossing in Shinjuku Kabukicho" loading="lazy"></div><figcaption><b data-i18n="streets.c3">Shinjuku, Kabukicho</b><span>2026.09</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="show">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="show.eyebrow">The show</span>
+        <h2 data-i18n="show.title">Five steps, one crowd.</h2>
+        <p data-i18n="show.lead">It's not a snack counter — it's a performance people stop for, film and share.</p>
+      </div>
+      <ol class="steps">
+        <li class="step"><span class="k" aria-hidden="true">蒸</span><span class="n">01</span><h3 data-i18n="show.s1t">Steam</h3><p data-i18n="show.s1d">Glutinous rice is steamed on site.</p></li>
+        <li class="step"><span class="k" aria-hidden="true">搗</span><span class="n">02</span><h3 data-i18n="show.s2t">Pound</h3><p data-i18n="show.s2d">“YOISHO!” — the crowd joins the call.</p></li>
+        <li class="step"><span class="k" aria-hidden="true">丸</span><span class="n">03</span><h3 data-i18n="show.s3t">Shape</h3><p data-i18n="show.s3d">Torn and rounded by hand while it's hot.</p></li>
+        <li class="step"><span class="k" aria-hidden="true">包</span><span class="n">04</span><h3 data-i18n="show.s4t">Fill</h3><p data-i18n="show.s4d">Wrapped around fresh fruit and sweet filling.</p></li>
+        <li class="step"><span class="k" aria-hidden="true">切</span><span class="n">05</span><h3 data-i18n="show.s5t">Cut &amp; serve</h3><p data-i18n="show.s5d">Sliced open to show the cross-section — made for the camera.</p></li>
+      </ol>
+      <p class="show-note"><b aria-hidden="true">刻</b><span data-i18n="show.note">Each round starts at a set time, every 30–60 minutes — the countdown is what gathers the crowd.</span></p>
+    </div>
+  </section>
+
+  <section class="section" id="menu" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="menu.eyebrow">Menu</span>
+        <h2 data-i18n="menu.title">Two mochi. One classic, one local.</h2>
+        <p data-i18n="menu.lead">Each piece is about 100 g — bigger than a regular daifuku, and pounded minutes before you eat it.</p>
+      </div>
+      <div class="menu-grid">
+        <article class="item">
+          <svg viewBox="0 0 120 120" role="img" aria-label="Cross-section: strawberry, matcha paste, mochi">
+            <circle cx="60" cy="60" r="54" fill="#FFFDF8" stroke="#2A2320" stroke-width="3"/>
+            <circle cx="60" cy="60" r="40" fill="#7E9A4C"/>
+            <path d="M60 32c14 0 22 10 20 24-2 16-12 28-20 32-8-4-18-16-20-32-2-14 6-24 20-24z" fill="#D13729"/>
+            <path d="M60 40c8 0 12 6 11 14-1 9-6 18-11 22-5-4-10-13-11-22-1-8 3-14 11-14z" fill="#F4A3A0"/>
+            <g fill="#FCE9A8"><circle cx="50" cy="48" r="1.6"/><circle cx="70" cy="48" r="1.6"/><circle cx="46" cy="62" r="1.6"/><circle cx="74" cy="62" r="1.6"/><circle cx="54" cy="76" r="1.6"/><circle cx="66" cy="76" r="1.6"/></g>
+          </svg>
+          <div>
+            <span class="tag" data-i18n="menu.m1tag">Japanese classic</span>
+            <h3 data-i18n="menu.m1name">Matcha Strawberry Mochi</h3>
+            <p class="price"><span data-i18n="menu.priceL">Price</span><b data-i18n="menu.priceV">Ask us</b></p>
+            <p data-i18n="menu.m1desc">A whole strawberry in matcha bean paste, wrapped in fresh-pounded mochi and dusted with Uji matcha.</p>
+          </div>
+        </article>
+        <article class="item local">
+          <svg viewBox="0 0 120 120" role="img" aria-label="Cross-section: mango, coconut filling, mochi">
+            <circle cx="60" cy="60" r="54" fill="#FFFDF8" stroke="#2A2320" stroke-width="3"/>
+            <circle cx="60" cy="60" r="40" fill="#F1E4C6"/>
+            <rect x="38" y="38" width="44" height="44" rx="12" fill="#F2A33A"/>
+            <rect x="46" y="46" width="28" height="28" rx="8" fill="#F8C35C"/>
+          </svg>
+          <div>
+            <span class="tag" data-i18n="menu.m2tag">Local edition</span>
+            <h3 data-i18n="menu.m2name">Mango Coconut Mochi</h3>
+            <p class="price"><span data-i18n="menu.priceL">Price</span><b data-i18n="menu.priceV">Ask us</b></p>
+            <p data-i18n="menu.m2desc">A generous piece of mango with coconut filling — our first local edition, created for Southeast Asia.</p>
+          </div>
+        </article>
+      </div>
+      <p class="menu-note" data-i18n="menu.note">We create a local edition for every city we visit, and source ingredients locally through official channels.</p>
+    </div>
+  </section>
+
+  <section class="section hosts" id="hosts">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="hosts.eyebrow">For event hosts &amp; venues</span>
+        <h2 data-i18n="hosts.title">Invite the show to your venue.</h2>
+        <p data-i18n="hosts.lead">We work with shopping malls, Japan festivals, hotels and brands. You bring the crowd, we bring the mortar.</p>
+      </div>
+      <div class="formats">
+        <div class="format"><span class="ic">MALL</span><h3 data-i18n="hosts.f1t">Mall pop-up</h3><p data-i18n="hosts.f1d">A 3-day stand in a high-traffic atrium or event space.</p></div>
+        <div class="format"><span class="ic">FESTIVAL</span><h3 data-i18n="hosts.f2t">Japan festivals &amp; expos</h3><p data-i18n="hosts.f2d">A live-show booth that anchors your Japan zone.</p></div>
+        <div class="format"><span class="ic">EVENT</span><h3 data-i18n="hosts.f3t">Hotels &amp; private events</h3><p data-i18n="hosts.f3d">Openings, parties and New Year celebrations.</p></div>
+      </div>
+      <div class="deal">
+        <div>
+          <h3 data-i18n="hosts.bringT">What we bring</h3>
+          <ul>
+            <li data-i18n="hosts.b1">The wooden mortar and mallets (or a local rental we arrange)</li>
+            <li data-i18n="hosts.b2">A 3-person pounding crew in happi coats</li>
+            <li data-i18n="hosts.b3">Recipes, show script and bilingual signage</li>
+            <li data-i18n="hosts.b4">Filming and posting on our social channels</li>
+          </ul>
+        </div>
+        <div class="need">
+          <h3 data-i18n="hosts.needT">What we ask from you</h3>
+          <ul>
+            <li data-i18n="hosts.n1">Space for the mortar and a prep table</li>
+            <li data-i18n="hosts.n2">Power and water access</li>
+            <li data-i18n="hosts.n3">Permission to cook and sell food on site</li>
+            <li data-i18n="hosts.n4">3–4 local staff for register and queue — we can arrange this together</li>
+          </ul>
+        </div>
+        <figure class="cartcard">
+          <img src="img/cart.webp" alt="The wooden mortar and water tub strapped to a folding cart on a Harajuku street" loading="lazy">
+          <figcaption><b data-i18n="hosts.cartT">The stage rolls in.</b><span data-i18n="hosts.cartD">Mortar, water tub and tools travel together on one cart.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="next">
+    <div class="wrap next-row">
+      <div>
+        <h2 data-i18n="next.title">Which city is next?</h2>
+        <p data-i18n="next.lead">We go where the comments are loudest. Tell us your city under any of our videos.</p>
+      </div>
+      <a class="btn" data-link="tiktok" href="#contact" target="_blank" rel="noopener" data-i18n="next.cta">Vote on TikTok</a>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 data-i18n="faq.title">Questions from hosts</h2>
+      </div>
+      <div class="faq-list">
+        <details><summary data-i18n="faq.q1">How long does a pop-up run?</summary><p data-i18n="faq.a1">Usually 3 days, with a show every 30–60 minutes. Single-day events are welcome too.</p></details>
+        <details><summary data-i18n="faq.q2">Which languages do you work in?</summary><p data-i18n="faq.a2">English and Japanese. We prepare menus and signage in the local language for each city.</p></details>
+        <details><summary data-i18n="faq.q3">Do you ship the mortar abroad?</summary><p data-i18n="faq.a3">We rent a wooden mortar locally whenever possible, and arrange shipping when it isn't.</p></details>
+        <details><summary data-i18n="faq.q4">Is mochi safe for every guest?</summary><p data-i18n="faq.a4">Mochi is very chewy. We serve it in bite-size pieces, post a “chew well” notice and show allergen information in the local language.</p></details>
+        <details><summary data-i18n="faq.q5">How much does it cost?</summary><p data-i18n="faq.a5">Pricing depends on the city, venue and number of days, so please ask us. Send your details through the booking form and we'll reply with a quote.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact-card">
+        <div>
+          <span class="eyebrow" data-i18n="contact.eyebrow">Booking</span>
+          <h2 data-i18n="contact.title">Let's pound mochi together.</h2>
+          <p data-i18n="contact.lead">Tell us your venue, dates and expected footfall — we'll reply with a plan.</p>
+        </div>
+        <div class="contact-side">
+          <a class="btn" data-link="form" href="#contact" target="_blank" rel="noopener" data-i18n="contact.btn">Open the booking form</a>
+          <p data-i18n="contact.note" style="font-size:.92rem">Press, collaborations and brand partnerships are welcome too.</p>
+          <div class="follow">
+            <small data-i18n="contact.follow">Follow the show</small>
+            <div class="sns">
+              <a data-link="tiktok" href="#contact" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.8 5.8 0 1 0 5 5.7V9.2a7.4 7.4 0 0 0 4.3 1.4V7.5a4.3 4.3 0 0 1-3.3-1.7z"/></svg>TikTok</a>
+              <a data-link="instagram" href="#contact" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>Instagram</a>
+              <a data-link="youtube" href="#contact" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>YouTube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <a class="logo" href="#top"><span class="sun" aria-hidden="true"></span>mochimochi</a>
+    <span><span data-i18n="footer.op">Operated by doradora Co., Ltd. (Japan)</span> · © 2026 mochimochi</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  /* ▼ 公開前にここへ実URLを入れる */
+  var LINKS = {
+    form:"https://docs.google.com/forms/d/e/1FAIpQLSet2ofuuH9AYNXEKwKKkR4hgA_GPTpr-o0CoswQPHhhUe0y4w/viewform",
+    tiktok:"https://www.tiktok.com/@mochimochi_japan_",
+    instagram:"https://www.instagram.com/mochimochi_japan_/",
+    youtube:"https://www.youtube.com/channel/UCf0w8UZt2V2ofshxPuJ_U4A"
+  };
+
+  document.querySelectorAll("[data-link]").forEach(function(a){
+    var u = LINKS[a.getAttribute("data-link")];
+    if (u) a.href = u; else { a.removeAttribute("target"); a.removeAttribute("rel"); }
+  });
+
+  var LANGS = ["en","ja","zh-cn","zh-tw","ko","fr","es"];
+  var NAMES = {en:"English",ja:"日本語","zh-cn":"简体中文","zh-tw":"繁體中文",ko:"한국어",fr:"Français",es:"Español"};
+  var HTML_LANG = {en:"en",ja:"ja","zh-cn":"zh-Hans","zh-tw":"zh-Hant",ko:"ko",fr:"fr",es:"es"};
+  var KEY = "mochimochi_lang_v2";
+
+  /* [en, ja, zh-cn, zh-tw, ko, fr, es] */
+  var T = {
+    "meta.title":["mochimochi — Live mochi pounding pop-up","mochimochi｜つきたて餅の餅つきPOPUP","mochimochi｜现场捣年糕快闪店","mochimochi｜現場搗麻糬快閃店","mochimochi｜라이브 떡메치기 팝업","mochimochi — Pop-up de mochi pilé en direct","mochimochi — Pop-up de mochi en vivo"],
+    "nav.show":["The Show","餅つきショー","捣年糕表演","搗麻糬表演","떡메치기 쇼","Le spectacle","El show"],
+    "nav.menu":["Menu","お品書き","菜单","菜單","메뉴","Menu","Menú"],
+    "nav.hosts":["For Hosts","主催者の方へ","合作方","合作洽詢","주최사 안내","Organisateurs","Organizadores"],
+    "nav.faq":["FAQ","よくある質問","常见问题","常見問題","FAQ","FAQ","Preguntas"],
+    "nav.book":["Book a pop-up","出店を依頼する","预约快闪店","預約快閃店","팝업 의뢰하기","Réserver un pop-up","Reservar un pop-up"],
+
+    "hero.eyebrow":["Live mochi pounding from Tokyo","東京発・ライブ餅つき","来自东京的现场捣年糕","來自東京的現場搗麻糬","도쿄에서 온 라이브 떡메치기","Mochi pilé en direct, venu de Tokyo","Mochi machacado en vivo, desde Tokio"],
+    "hero.title":["Fresh-pounded mochi,<br>live in <em>your city.</em>","つきたての餅を、<br><em>あなたの街で。</em>","现捣的日本年糕，<br>来到<em>你的城市。</em>","現搗的日本麻糬，<br>來到<em>你的城市。</em>","갓 친 모찌를,<br><em>당신의 도시에서.</em>","Du mochi tout juste pilé,<br>en direct <em>dans votre ville.</em>","Mochi recién machacado,<br>en vivo <em>en tu ciudad.</em>"],
+    "hero.lead":[
+      "A wooden mortar, a 90 cm mallet and a crew from Japan. We pound steamed rice into mochi right in front of your guests, wrap it around fresh fruit, and hand it over while it's still warm.",
+      "木の臼と長さ90cmの杵、そして日本から来た餅つきチーム。蒸したもち米を目の前でつき上げ、フルーツを包んで、温かいうちにお渡しします。",
+      "木臼、90厘米长的木杵，和来自日本的捣年糕团队。我们在客人面前把蒸好的糯米捣成年糕，包入新鲜水果，趁热递到你手中。",
+      "木臼、90公分長的木杵，以及來自日本的搗麻糬團隊。我們在客人面前把蒸好的糯米搗成麻糬，包入新鮮水果，趁熱送到你手中。",
+      "나무 절구와 90cm 떡메, 그리고 일본에서 온 팀. 손님 눈앞에서 찐 찹쌀을 쳐서 모찌로 만들고, 생과일을 감싸 따뜻할 때 건넵니다.",
+      "Un mortier en bois, un maillet de 90 cm et une équipe venue du Japon. Nous pilons le riz gluant cuit à la vapeur devant vos invités, l'enroulons autour de fruits frais et le servons encore tiède.",
+      "Un mortero de madera, un mazo de 90 cm y un equipo desde Japón. Machacamos el arroz al vapor frente a tus invitados, lo envolvemos alrededor de fruta fresca y lo servimos aún tibio."],
+    "hero.cta1":["Book a pop-up","出店を依頼する","预约快闪店","預約快閃店","팝업 의뢰하기","Réserver un pop-up","Reservar un pop-up"],
+    "hero.cta2":["See the show","ショーを見る","观看表演","觀看表演","쇼 보기","Voir le spectacle","Ver el show"],
+    "hero.seal":["Made<br>in front<br>of you","目の前で<br>つきます","现场<br>现捣","現場<br>現搗","눈앞에서<br>칩니다","Pilé<br>sous vos<br>yeux","Hecho<br>frente<br>a ti"],
+
+    "spec.l1":["Wooden mortar","木臼","木臼","木臼","나무 절구","Mortier en bois","Mortero de madera"],
+    "spec.v1":["3 shō · ~45 kg","3升・約45kg","3升 · 约45kg","3升 · 約45kg","3되 · 약 45kg","3 shō · ~45 kg","3 shō · ~45 kg"],
+    "spec.l2":["Mallet","杵","木杵","木杵","떡메","Maillet","Mazo"],
+    "spec.v2":["90 cm","柄長90cm","90 厘米","90 公分","90 cm","90 cm","90 cm"],
+    "spec.l3":["A show every","ショー間隔","表演间隔","表演間隔","쇼 간격","Un show toutes les","Un show cada"],
+    "spec.v3":["30–60 min","30〜60分","30–60 分钟","30–60 分鐘","30–60분","30–60 min","30–60 min"],
+    "spec.l4":["Pop-up length","出店期間","快闪周期","快閃期間","팝업 기간","Durée du pop-up","Duración"],
+    "spec.v4":["3 days","3日間","3 天","3 天","3일","3 jours","3 días"],
+
+    "streets.eyebrow":["Field-tested","実演実績","实地演出","實地演出","현장 실적","Testé sur le terrain","Probado en la calle"],
+    "streets.title":["Already pounding on the streets of Tokyo.","東京の街角で、もうついています。","已经在东京街头开捣。","已經在東京街頭開搗。","이미 도쿄 거리에서 치고 있습니다.","Déjà en action dans les rues de Tokyo.","Ya machacando en las calles de Tokio."],
+    "streets.lead":[
+      "Our mortar rides on a folding cart, so the show sets up anywhere — a waterfront deck, a shopping street, a crossing in Kabukicho.",
+      "臼は折りたたみ台車に載せて移動。海辺のデッキでも、商店街でも、歌舞伎町の交差点でも、その場がステージになります。",
+      "木臼装在折叠推车上，随处都能开演——海边栈道、购物街、歌舞伎町的路口。",
+      "木臼裝在折疊推車上，隨處都能開演——海邊步道、購物街、歌舞伎町的路口。",
+      "절구는 접이식 카트에 싣고 다닙니다. 바닷가 데크, 쇼핑 거리, 가부키초 교차로 어디든 무대가 됩니다.",
+      "Notre mortier voyage sur un chariot pliant : le spectacle s'installe partout — un ponton, une rue commerçante, un carrefour de Kabukicho.",
+      "Nuestro mortero viaja en un carrito plegable, así que el show se monta en cualquier lugar: un muelle, una calle comercial, un cruce de Kabukicho."],
+    "streets.c1":["Odaiba","お台場","台场","台場","오다이바","Odaiba","Odaiba"],
+    "streets.c2":["Harajuku, Takeshita-dori","原宿・竹下通り","原宿·竹下通","原宿·竹下通","하라주쿠 다케시타도리","Harajuku, Takeshita-dori","Harajuku, Takeshita-dori"],
+    "streets.c3":["Shinjuku, Kabukicho","新宿・歌舞伎町","新宿·歌舞伎町","新宿·歌舞伎町","신주쿠 가부키초","Shinjuku, Kabukicho","Shinjuku, Kabukicho"],
+
+    "show.eyebrow":["The show","餅つきショー","表演流程","表演流程","쇼 구성","Le spectacle","El show"],
+    "show.title":["Five steps, one crowd.","5つの工程で、人だかりをつくる。","五个步骤，聚起一群人。","五個步驟，聚起一群人。","다섯 단계로 사람들을 모읍니다.","Cinq étapes, une foule.","Cinco pasos, una multitud."],
+    "show.lead":[
+      "It's not a snack counter — it's a performance people stop for, film and share.",
+      "売っているのは餅ではなく、足を止めて、撮って、シェアしたくなる「日本体験」です。",
+      "这不是小吃摊，而是让人驻足、拍摄、分享的日本文化表演。",
+      "這不是小吃攤，而是讓人駐足、拍攝、分享的日本文化表演。",
+      "간식 판매대가 아니라, 발걸음을 멈추고 찍고 공유하게 되는 공연입니다.",
+      "Pas un simple stand de snacks : une performance qui arrête les passants, qu'on filme et qu'on partage.",
+      "No es un puesto de snacks: es un espectáculo que la gente se detiene a ver, graba y comparte."],
+    "show.s1t":["Steam","蒸す","蒸","蒸","찌기","Vapeur","Vapor"],
+    "show.s1d":["Glutinous rice is steamed on site.","もち米をその場で蒸し上げる。","糯米在现场蒸熟。","糯米在現場蒸熟。","찹쌀을 현장에서 찝니다.","Le riz gluant est cuit à la vapeur sur place.","El arroz glutinoso se cuece al vapor en el lugar."],
+    "show.s2t":["Pound","つく","捣","搗","치기","Piler","Machacar"],
+    "show.s2d":["“YOISHO!” — the crowd joins the call.","「よいしょ！」の掛け声に、観客も参加。","“YOISHO!”——观众一起喊口号。","「YOISHO!」——觀眾一起喊口號。","“요이쇼!” 관객도 함께 외칩니다.","« YOISHO ! » — la foule reprend le cri.","“¡YOISHO!” — el público se une al grito."],
+    "show.s3t":["Shape","まるめる","揉圆","揉圓","빚기","Façonner","Formar"],
+    "show.s3d":["Torn and rounded by hand while it's hot.","熱いうちに、手でちぎって丸める。","趁热用手揪开、揉圆。","趁熱用手揪開、揉圓。","뜨거울 때 손으로 떼어 둥글게 빚습니다.","Détaché et roulé à la main, encore chaud.","Se corta y redondea a mano, aún caliente."],
+    "show.s4t":["Fill","包む","包馅","包餡","감싸기","Garnir","Rellenar"],
+    "show.s4d":["Wrapped around fresh fruit and sweet filling.","フルーツと餡を包み込む。","包入新鲜水果和甜馅。","包入新鮮水果和甜餡。","생과일과 앙금을 감쌉니다.","Enroulé autour de fruits frais et d'une garniture sucrée.","Se envuelve alrededor de fruta fresca y relleno dulce."],
+    "show.s5t":["Cut & serve","切って渡す","切开奉上","切開奉上","잘라서 건네기","Couper et servir","Cortar y servir"],
+    "show.s5d":["Sliced open to show the cross-section — made for the camera.","半分に切って断面を見せる。カメラ映えまで仕上げます。","对半切开展示横截面——专为镜头而生。","對半切開展示橫截面——專為鏡頭而生。","반으로 잘라 단면을 보여 줍니다. 카메라를 위한 마무리.","Coupé en deux pour montrer la coupe — pensé pour la caméra.","Se corta a la mitad para mostrar el corte: hecho para la cámara."],
+    "show.note":[
+      "Each round starts at a set time, every 30–60 minutes — the countdown is what gathers the crowd.",
+      "30〜60分ごとに「開演時間」をつくる。そのカウントダウンが人だかりを生みます。",
+      "每30–60分钟定时开演一轮——倒计时本身就能聚集人潮。",
+      "每30–60分鐘定時開演一輪——倒數本身就能聚集人潮。",
+      "30–60분마다 정해진 시간에 시작합니다. 카운트다운이 사람을 모읍니다.",
+      "Chaque séance démarre à heure fixe, toutes les 30–60 minutes : le compte à rebours attire la foule.",
+      "Cada ronda empieza a una hora fija, cada 30–60 minutos: la cuenta atrás es lo que reúne al público."],
+
+    "menu.eyebrow":["Menu","お品書き","菜单","菜單","메뉴","Menu","Menú"],
+    "menu.title":["Two mochi. One classic, one local.","定番とご当地、2つだけで勝負。","两款年糕：一款经典，一款在地。","兩款麻糬：一款經典，一款在地。","두 가지 모찌. 정통 하나, 현지 한정 하나.","Deux mochis : un classique, un local.","Dos mochis: uno clásico, uno local."],
+    "menu.lead":[
+      "Each piece is about 100 g — bigger than a regular daifuku, and pounded minutes before you eat it.",
+      "1個約100g。一般的な大福より大きく、つきたて数分のものをお渡しします。",
+      "每个约100克，比普通大福更大，捣好几分钟内就送到你手上。",
+      "每顆約100克，比一般大福更大，搗好幾分鐘內就送到你手上。",
+      "개당 약 100g. 일반 다이후쿠보다 크고, 친 지 몇 분 만에 건넵니다.",
+      "Environ 100 g pièce — plus gros qu'un daifuku classique, et pilé quelques minutes avant dégustation.",
+      "Cada pieza pesa unos 100 g: más grande que un daifuku normal y machacada minutos antes de comerla."],
+    "menu.m1tag":["Japanese classic","日本の王道","日本经典","日本經典","일본 정통","Classique japonais","Clásico japonés"],
+    "menu.m1name":["Matcha Strawberry Mochi","抹茶いちご餅","抹茶草莓年糕","抹茶草莓麻糬","말차 딸기 모찌","Mochi matcha-fraise","Mochi de matcha y fresa"],
+    "menu.m1desc":[
+      "A whole strawberry in matcha bean paste, wrapped in fresh-pounded mochi and dusted with Uji matcha.",
+      "丸ごといちごを抹茶餡で包み、つきたての餅で仕上げ。宇治抹茶をひと振り。",
+      "整颗草莓裹上抹茶馅，再包上现捣年糕，撒上宇治抹茶。",
+      "整顆草莓裹上抹茶餡，再包上現搗麻糬，撒上宇治抹茶。",
+      "딸기 한 알을 말차 앙금으로 감싸고, 갓 친 모찌로 마무리한 뒤 우지 말차를 뿌립니다.",
+      "Une fraise entière dans une pâte de haricot au matcha, enveloppée de mochi fraîchement pilé et saupoudrée de matcha d'Uji.",
+      "Una fresa entera en pasta de judía con matcha, envuelta en mochi recién machacado y espolvoreada con matcha de Uji."],
+    "menu.m2tag":["Local edition","ご当地限定","在地限定","在地限定","현지 한정","Édition locale","Edición local"],
+    "menu.m2name":["Mango Coconut Mochi","マンゴーココナッツ餅","芒果椰子年糕","芒果椰子麻糬","망고 코코넛 모찌","Mochi mangue-coco","Mochi de mango y coco"],
+    "menu.m2desc":[
+      "A generous piece of mango with coconut filling — our first local edition, created for Southeast Asia.",
+      "大きめのマンゴーとココナッツ餡。東南アジア向けに開発した、最初のご当地限定です。",
+      "大块芒果配椰子馅——我们为东南亚打造的第一款在地限定。",
+      "大塊芒果配椰子餡——我們為東南亞打造的第一款在地限定。",
+      "큼직한 망고와 코코넛 앙금. 동남아시아를 위해 만든 첫 현지 한정 메뉴입니다.",
+      "Un beau morceau de mangue et une garniture coco — notre première édition locale, créée pour l'Asie du Sud-Est.",
+      "Un buen trozo de mango con relleno de coco: nuestra primera edición local, creada para el Sudeste Asiático."],
+    "menu.note":[
+      "We create a local edition for every city we visit, and source ingredients locally through official channels.",
+      "訪れる街ごとにご当地フレーバーを開発。食材は現地で正規ルートから調達します。",
+      "每到一座城市，我们都会开发在地口味；食材通过正规渠道在当地采购。",
+      "每到一座城市，我們都會開發在地口味；食材透過正規管道在當地採購。",
+      "방문하는 도시마다 현지 한정 맛을 개발하며, 식재료는 현지 정식 경로로 조달합니다.",
+      "Nous créons une édition locale pour chaque ville visitée, avec des ingrédients achetés sur place par des circuits officiels.",
+      "Creamos una edición local para cada ciudad que visitamos y compramos los ingredientes allí, por canales oficiales."],
+
+    "hosts.eyebrow":["For event hosts & venues","主催者・会場の方へ","致活动主办方与场地","致活動主辦方與場地","주최사·행사장 담당자께","Organisateurs & lieux","Organizadores y recintos"],
+    "hosts.title":["Invite the show to your venue.","あなたの会場に、餅つきショーを。","把捣年糕表演请到你的场地。","把搗麻糬表演請到你的場地。","당신의 행사장에 떡메치기 쇼를.","Invitez le spectacle chez vous.","Lleva el show a tu recinto."],
+    "hosts.lead":[
+      "We work with shopping malls, Japan festivals, hotels and brands. You bring the crowd, we bring the mortar.",
+      "商業施設、日本フェス、ホテル、企業イベントまで。人が集まる場所に、臼を持って伺います。",
+      "商场、日本节庆、酒店、品牌活动都可以合作。你负责人潮，我们带上木臼。",
+      "商場、日本祭典、飯店、品牌活動都可以合作。你負責人潮，我們帶上木臼。",
+      "쇼핑몰, 일본 페스티벌, 호텔, 브랜드 행사까지. 사람이 모이는 곳이라면 절구를 들고 갑니다.",
+      "Centres commerciaux, festivals japonais, hôtels, marques : vous apportez la foule, nous apportons le mortier.",
+      "Centros comerciales, festivales japoneses, hoteles y marcas. Tú pones el público, nosotros el mortero."],
+    "hosts.f1t":["Mall pop-up","商業施設POPUP","商场快闪","商場快閃","쇼핑몰 팝업","Pop-up en centre commercial","Pop-up en centro comercial"],
+    "hosts.f1d":["A 3-day stand in a high-traffic atrium or event space.","人通りの多いアトリウムや催事スペースで3日間。","在人流量大的中庭或活动区设摊3天。","在人潮多的中庭或活動區設攤3天。","유동 인구가 많은 아트리움이나 이벤트 공간에서 3일간.","Un stand de 3 jours dans un atrium ou espace événementiel très fréquenté.","Un puesto de 3 días en un atrio o zona de eventos con mucho tránsito."],
+    "hosts.f2t":["Japan festivals & expos","日本フェス・博覧会","日本节庆与展会","日本祭典與展會","일본 페스티벌·박람회","Festivals & salons japonais","Festivales y ferias de Japón"],
+    "hosts.f2d":["A live-show booth that anchors your Japan zone.","日本エリアの目玉になる実演ブース。","成为日本主题区焦点的现场表演摊位。","成為日本主題區焦點的現場表演攤位。","일본 존의 간판이 되는 라이브 부스.","Un stand-spectacle qui devient le cœur de votre espace Japon.","Un stand en vivo que se convierte en el centro de tu zona Japón."],
+    "hosts.f3t":["Hotels & private events","ホテル・企業イベント","酒店与企业活动","飯店與企業活動","호텔·기업 행사","Hôtels & événements privés","Hoteles y eventos privados"],
+    "hosts.f3d":["Openings, parties and New Year celebrations.","オープニング、パーティ、新年行事に。","开业、派对和新年庆典。","開幕、派對與新年慶典。","오픈 행사, 파티, 신년 행사에.","Inaugurations, soirées et fêtes du Nouvel An.","Inauguraciones, fiestas y celebraciones de Año Nuevo."],
+    "hosts.bringT":["What we bring","私たちが用意するもの","我们负责","我們負責","저희가 준비하는 것","Ce que nous apportons","Lo que llevamos"],
+    "hosts.b1":["The wooden mortar and mallets (or a local rental we arrange)","木臼と杵（または現地レンタルを手配）","木臼与木杵（或由我们安排当地租借）","木臼與木杵（或由我們安排當地租借）","나무 절구와 떡메 (또는 현지 대여 준비)","Le mortier en bois et les maillets (ou une location locale organisée par nous)","El mortero y los mazos (o un alquiler local que gestionamos)"],
+    "hosts.b2":["A 3-person pounding crew in happi coats","法被姿の餅つきチーム3名","身穿法被的3人捣年糕团队","身穿法被的3人搗麻糬團隊","핫피를 입은 3인 떡메치기 팀","Une équipe de 3 pileurs en happi","Un equipo de 3 personas con happi"],
+    "hosts.b3":["Recipes, show script and bilingual signage","レシピ・ショー構成・多言語POP","配方、表演流程与双语标识","配方、表演流程與雙語標示","레시피, 쇼 구성, 다국어 안내물","Recettes, déroulé du show et signalétique bilingue","Recetas, guion del show y cartelería bilingüe"],
+    "hosts.b4":["Filming and posting on our social channels","自社SNSでの撮影・発信","在我们的社交媒体上拍摄与发布","在我們的社群媒體上拍攝與發布","자사 SNS 촬영·홍보","Tournage et diffusion sur nos réseaux","Grabación y publicación en nuestras redes"],
+    "hosts.needT":["What we ask from you","主催者様にお願いしたいこと","需要你提供","需要你提供","주최사께 부탁드리는 것","Ce que nous vous demandons","Lo que te pedimos"],
+    "hosts.n1":["Space for the mortar and a prep table","臼と作業台を置けるスペース","放置木臼与操作台的空间","放置木臼與工作台的空間","절구와 작업대를 둘 공간","De la place pour le mortier et une table de préparation","Espacio para el mortero y una mesa de trabajo"],
+    "hosts.n2":["Power and water access","電源と給排水","电源与上下水","電源與給排水","전기와 급배수","Électricité et accès à l'eau","Electricidad y acceso al agua"],
+    "hosts.n3":["Permission to cook and sell food on site","会場での調理・食品販売の許可","现场烹饪与食品销售许可","現場烹調與食品販售許可","현장 조리·식품 판매 허가","L'autorisation de cuisiner et vendre sur place","Permiso para cocinar y vender comida en el lugar"],
+    "hosts.n4":["3–4 local staff for register and queue — we can arrange this together","レジ・列整理の現地スタッフ3〜4名（ご相談可）","3–4名当地员工负责收银与排队（可协商安排）","3–4名當地人員負責收銀與排隊（可協商安排）","계산·줄 정리를 맡을 현지 스태프 3–4명 (협의 가능)","3–4 personnes sur place pour la caisse et la file — à organiser ensemble","3–4 personas locales para caja y fila; lo organizamos juntos"],
+    "hosts.cartT":["The stage rolls in.","ステージごと、転がして運ぶ。","舞台，推着就来。","舞台，推著就來。","무대째로 굴러갑니다.","La scène arrive sur roulettes.","El escenario llega rodando."],
+    "hosts.cartD":["Mortar, water tub and tools travel together on one cart.","臼・手水桶・道具一式を、台車ひとつで運びます。","木臼、水桶和工具全部装在一台推车上。","木臼、水桶和工具全部裝在一台推車上。","절구, 물통, 도구 일체를 카트 하나로 옮깁니다.","Mortier, bac à eau et outils voyagent sur un seul chariot.","Mortero, cubo de agua y herramientas viajan en un solo carrito."],
+
+    "next.title":["Which city is next?","次はどの街へ？","下一站去哪座城市？","下一站去哪座城市？","다음은 어느 도시로?","Quelle ville ensuite ?","¿Cuál es la próxima ciudad?"],
+    "next.lead":[
+      "We go where the comments are loudest. Tell us your city under any of our videos.",
+      "コメントが一番多い街へ行きます。動画のコメント欄で、あなたの街を教えてください。",
+      "哪里的留言最多，我们就去哪里。在任意视频下留言告诉我们你的城市。",
+      "哪裡的留言最多，我們就去哪裡。在任一影片下留言告訴我們你的城市。",
+      "댓글이 가장 많은 도시로 갑니다. 영상 댓글로 당신의 도시를 알려 주세요.",
+      "Nous allons là où les commentaires sont les plus nombreux. Dites-nous votre ville sous n'importe quelle vidéo.",
+      "Vamos a donde haya más comentarios. Dinos tu ciudad en cualquiera de nuestros videos."],
+    "next.cta":["Vote on TikTok","TikTokで投票する","去TikTok投票","去TikTok投票","TikTok에서 투표하기","Voter sur TikTok","Vota en TikTok"],
+
+    "faq.title":["Questions from hosts","主催者様からのよくある質問","主办方常见问题","主辦方常見問題","주최사 자주 묻는 질문","Questions des organisateurs","Preguntas de organizadores"],
+    "faq.q1":["How long does a pop-up run?","出店期間はどのくらい？","快闪店一般持续多久？","快閃店一般持續多久？","팝업 기간은 얼마나 되나요?","Combien de temps dure un pop-up ?","¿Cuánto dura un pop-up?"],
+    "faq.a1":["Usually 3 days, with a show every 30–60 minutes. Single-day events are welcome too.","基本は3日間、30〜60分ごとにショーを行います。1日だけのイベントもご相談ください。","通常为3天，每30–60分钟表演一次。单日活动也欢迎洽谈。","通常為3天，每30–60分鐘表演一次。單日活動也歡迎洽談。","보통 3일이며 30–60분마다 쇼를 합니다. 하루 행사도 상담 가능합니다.","Généralement 3 jours, avec un show toutes les 30–60 minutes. Les événements d'une journée sont aussi possibles.","Normalmente 3 días, con un show cada 30–60 minutos. También hacemos eventos de un día."],
+    "faq.q2":["Which languages do you work in?","対応言語は？","支持哪些语言？","支援哪些語言？","어떤 언어로 소통하나요?","Dans quelles langues travaillez-vous ?","¿En qué idiomas trabajan?"],
+    "faq.a2":["English and Japanese. We prepare menus and signage in the local language for each city.","英語と日本語で対応します。現地語のメニュー・POPは街ごとにご用意します。","英语和日语。每座城市都会准备当地语言的菜单和标识。","英語和日語。每座城市都會準備當地語言的菜單和標示。","영어와 일본어로 대응합니다. 도시마다 현지어 메뉴와 안내물을 준비합니다.","Anglais et japonais. Menus et signalétique sont préparés dans la langue locale de chaque ville.","Inglés y japonés. Preparamos menús y carteles en el idioma local de cada ciudad."],
+    "faq.q3":["Do you ship the mortar abroad?","臼は海外に持っていくの？","木臼会运到海外吗？","木臼會運到海外嗎？","절구를 해외로 가져가나요?","Expédiez-vous le mortier à l'étranger ?","¿Envían el mortero al extranjero?"],
+    "faq.a3":["We rent a wooden mortar locally whenever possible, and arrange shipping when it isn't.","現地で木臼をレンタルできる場合はレンタルし、難しい場合は輸送を手配します。","能在当地租到木臼就租，租不到则安排运输。","能在當地租到木臼就租，租不到則安排運送。","가능하면 현지에서 나무 절구를 대여하고, 어려우면 운송을 준비합니다.","Nous louons un mortier sur place dès que possible, sinon nous organisons l'expédition.","Alquilamos un mortero local siempre que se puede; si no, organizamos el envío."],
+    "faq.q4":["Is mochi safe for every guest?","餅は誰でも食べられる？","年糕适合所有人吃吗？","麻糬適合所有人吃嗎？","모찌는 누구나 먹어도 되나요?","Le mochi convient-il à tous ?","¿El mochi es seguro para todos?"],
+    "faq.a4":["Mochi is very chewy. We serve it in bite-size pieces, post a “chew well” notice and show allergen information in the local language.","餅は粘りの強い食べ物です。ひと口サイズでの提供、「よく噛んで」の注意書き、現地語のアレルギー表示を行います。","年糕非常有嚼劲。我们会切成一口大小，张贴“请细嚼慢咽”提示，并以当地语言标示过敏原。","麻糬非常有嚼勁。我們會切成一口大小，張貼「請細嚼慢嚥」提示，並以當地語言標示過敏原。","모찌는 매우 쫄깃합니다. 한입 크기로 제공하고, ‘꼭꼭 씹어 드세요’ 안내와 현지어 알레르기 표시를 합니다.","Le mochi est très collant. Nous le servons en bouchées, affichons un avis « mâchez bien » et les allergènes dans la langue locale.","El mochi es muy elástico. Lo servimos en bocados, colocamos un aviso de “mastica bien” y mostramos los alérgenos en el idioma local."],
+
+    "menu.priceL":["Price","価格","价格","價格","가격","Prix","Precio"],
+    "menu.priceV":["Ask us","お問い合わせください","请咨询","請洽詢","문의해 주세요","Sur demande","Consúltanos"],
+    "faq.q5":["How much does it cost?","料金はいくら？","费用是多少？","費用是多少？","비용은 얼마인가요?","Combien ça coûte ?","¿Cuánto cuesta?"],
+    "faq.a5":["Pricing depends on the city, venue and number of days, so please ask us. Send your details through the booking form and we'll reply with a quote.","料金は都市・会場・日数によって変わるため、お問い合わせください。依頼フォームから詳細をお送りいただければ、お見積もりをご返信します。","费用因城市、场地和天数而异，请联系我们。通过预约表单发送详情，我们会回复报价。","費用因城市、場地與天數而異，請與我們聯繫。透過預約表單送出詳情，我們會回覆報價。","비용은 도시, 행사장, 일수에 따라 달라지니 문의해 주세요. 의뢰 폼으로 내용을 보내 주시면 견적을 보내 드립니다.","Le tarif dépend de la ville, du lieu et du nombre de jours : contactez-nous. Envoyez vos informations via le formulaire et nous vous répondrons avec un devis.","El precio depende de la ciudad, el lugar y los días, así que consúltanos. Envía los detalles por el formulario y te responderemos con un presupuesto."],
+    "contact.eyebrow":["Booking","ご依頼","预约","預約","의뢰","Réservation","Reservas"],
+    "contact.title":["Let's pound mochi together.","一緒に、餅をつきましょう。","一起来捣年糕吧。","一起來搗麻糬吧。","함께 떡을 칩시다.","Pilons du mochi ensemble.","Machaquemos mochi juntos."],
+    "contact.lead":["Tell us your venue, dates and expected footfall — we'll reply with a plan.","会場・日程・想定来場者数をお知らせください。企画案をお送りします。","告诉我们场地、日期和预计人流量，我们会回复具体方案。","告訴我們場地、日期與預計人流，我們會回覆具體方案。","행사장, 일정, 예상 방문객 수를 알려 주시면 기획안을 보내 드립니다.","Indiquez-nous le lieu, les dates et la fréquentation prévue : nous revenons avec une proposition.","Cuéntanos el lugar, las fechas y el público esperado, y te enviamos una propuesta."],
+    "contact.btn":["Open the booking form","依頼フォームを開く","打开预约表单","開啟預約表單","의뢰 폼 열기","Ouvrir le formulaire","Abrir el formulario"],
+    "contact.note":["Press, collaborations and brand partnerships are welcome too.","取材・コラボ・企業タイアップのご相談も歓迎です。","也欢迎媒体采访、联名合作与品牌合作。","也歡迎媒體採訪、聯名與品牌合作。","취재, 콜라보, 브랜드 제휴 문의도 환영합니다.","Presse, collaborations et partenariats de marque bienvenus.","También recibimos prensa, colaboraciones y alianzas con marcas."],
+    "contact.follow":["Follow the show","SNSでショーを見る","关注我们的表演","追蹤我們的表演","SNS에서 쇼 보기","Suivre le spectacle","Sigue el show"],
+    "footer.op":["Operated by doradora Co., Ltd. (Japan)","運営：株式会社doradora","运营：doradora股份有限公司（日本）","營運：doradora股份有限公司（日本）","운영: 주식회사 doradora (일본)","Géré par doradora Co., Ltd. (Japon)","Operado por doradora Co., Ltd. (Japón)"]
+  };
+
+  function get(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function put(v){ try{ localStorage.setItem(KEY,v); }catch(e){} }
+
+  function detect(){
+    var s = get(); if (s && LANGS.indexOf(s) > -1) return s;
+    return "en";
+  }
+
+  function apply(lang){
+    var i = LANGS.indexOf(lang); if (i < 0) { lang = "en"; i = 0; }
+    document.documentElement.lang = HTML_LANG[lang];
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var r = T[el.getAttribute("data-i18n")]; if (r) el.textContent = r[i];
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+      var r = T[el.getAttribute("data-i18n-html")]; if (r) el.innerHTML = r[i];
+    });
+    document.title = T["meta.title"][i];
+    sel.value = lang;
+  }
+
+  var sel = document.getElementById("lang-select");
+  LANGS.forEach(function(l){ var o=document.createElement("option"); o.value=l; o.textContent=NAMES[l]; sel.appendChild(o); });
+  sel.addEventListener("change", function(){ put(sel.value); apply(sel.value); });
+  apply(detect());
+})();
+</script>
+
+</body>
+</html>
