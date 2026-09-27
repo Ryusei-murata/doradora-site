@@ -343,7 +343,40 @@
   @media (prefers-reduced-motion: reduce){
     .btn{transition:none;}
     .hero-rings{animation:none;}
+    .reveal, .reveal-line{transition:none !important; opacity:1 !important; transform:none !important;}
+    .roadmap-line::before{transition:none !important; transform:scaleX(1) !important;}
   }
+
+  .reveal{
+    opacity:0; transform:translateY(28px);
+    transition:opacity .8s cubic-bezier(.16,.84,.44,1), transform .8s cubic-bezier(.16,.84,.44,1);
+  }
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+  .card-grid .reveal:nth-child(2){transition-delay:.1s;}
+  .card-grid .reveal:nth-child(3){transition-delay:.2s;}
+  .strength-list .reveal:nth-child(2){transition-delay:.1s;}
+  .strength-list .reveal:nth-child(3){transition-delay:.2s;}
+  .strength-list .reveal:nth-child(4){transition-delay:.3s;}
+  .roadmap-line .reveal:nth-child(2){transition-delay:.1s;}
+  .roadmap-line .reveal:nth-child(3){transition-delay:.2s;}
+  .roadmap-line .reveal:nth-child(4){transition-delay:.3s;}
+  .roadmap-line .reveal:nth-child(5){transition-delay:.4s;}
+
+  .roadmap-line::before{
+    transform-origin:left center; transform:scaleX(0);
+    transition:transform 1.2s cubic-bezier(.16,.84,.44,1) .15s;
+  }
+  .roadmap-line.is-visible::before{transform:scaleX(1);}
+
+  .card, .strength, .roadmap-step{
+    transition:transform .28s ease, box-shadow .28s ease;
+  }
+  .card{position:relative;}
+  .card:hover{transform:translateY(-5px); box-shadow:var(--shadow); z-index:2;}
+  .strength{position:relative;}
+  .strength:hover{transform:translateY(-4px); box-shadow:var(--shadow); z-index:2;}
+  .roadmap-step:hover{transform:translateY(-3px);}
+  .btn:hover{box-shadow:var(--shadow);}
 
   .lang-switch{position:relative;}
   .lang-switch-toggle{
@@ -408,7 +441,7 @@
         <circle cx="200" cy="200" r="160" stroke="var(--indigo)" stroke-opacity=".25" stroke-width="1.5"/>
         <circle cx="200" cy="200" r="198" stroke="var(--paper-line)" stroke-width="1.5"/>
       </svg>
-      <div class="hero-inner">
+      <div class="hero-inner reveal">
         <span class="eyebrow" data-i18n="hero.eyebrow">Coming Soon &mdash; 株式会社doradora(設立準備中)</span>
         <h1 class="headline" data-i18n-html="hero.headline">ドラを鳴らす、<br>心を鳴らす。</h1>
         <p class="lead" data-i18n-html="hero.lead">杵の音に鼓動を重ね、<br>餅づくりという日本の伝統を、<br>品質と体験価値の両立でもう一度主役に。<br>doradoraは、これから始まる和菓子ブランドです。</p>
@@ -422,13 +455,13 @@
 
   <section id="business">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="kicker">Our Business</span>
         <h2 class="section-title" data-i18n="business.title">事業内容</h2>
         <p data-i18n-html="business.lead">doradoraが大切にする3つの軸。<br>餅という素材の可能性を、<br>製法・体験・文化の3方向から広げていきます。</p>
       </div>
       <div class="card-grid">
-        <article class="card">
+        <article class="card reveal">
           <svg class="icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M8 24c0-5 3.5-8 8-8s8 3 8 8" stroke="var(--indigo-deep)" stroke-width="1.6" stroke-linecap="round"/>
             <ellipse cx="16" cy="24.5" rx="11" ry="2.6" stroke="var(--vermillion)" stroke-width="1.6"/>
@@ -438,7 +471,7 @@
           <h3 data-i18n="business.card1.title">匠の製法</h3>
           <p data-i18n="business.card1.desc">厳選した餅米と、杵つきによる昔ながらの製法にこだわります。効率より、味と食感を優先します。</p>
         </article>
-        <article class="card">
+        <article class="card reveal">
           <svg class="icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M11 12c1-2 0-3-.5-4.5M16 12c1-2 0-3-.5-4.5M21 12c1-2 0-3-.5-4.5" stroke="var(--vermillion)" stroke-width="1.6" stroke-linecap="round"/>
             <path d="M7 15h18l-1.6 9.2a2 2 0 0 1-2 1.8H10.6a2 2 0 0 1-2-1.8L7 15Z" stroke="var(--indigo-deep)" stroke-width="1.6" stroke-linejoin="round"/>
@@ -447,7 +480,7 @@
           <h3 data-i18n="business.card2.title">体験価値</h3>
           <p data-i18n="business.card2.desc">見て、聞いて、味わう。餅つきの躍動感そのものを、店頭や催事でお客様に届けます。</p>
         </article>
-        <article class="card">
+        <article class="card reveal">
           <svg class="icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M9 20a7 7 0 0 1 14 0" stroke="var(--indigo-deep)" stroke-width="1.6" stroke-linecap="round"/>
             <path d="M9 20a7 7 0 0 0 14 0" stroke="var(--vermillion)" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="1 4.2"/>
@@ -463,34 +496,34 @@
 
   <section id="strengths">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="kicker">Why doradora</span>
         <h2 class="section-title" data-i18n="strengths.title">選ばれる理由</h2>
         <p data-i18n-html="strengths.lead">設立準備段階だからこそ、<br>はっきりお伝えできることがあります。<br>お取引先として doradora を選ぶ理由です。</p>
       </div>
       <div class="strength-list">
-        <div class="strength">
+        <div class="strength reveal">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3c2 3 4 5.2 4 8.4A4 4 0 0 1 8 11.4C8 8.2 10 6 12 3Z" stroke="var(--vermillion)" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 15.4V21" stroke="var(--indigo-deep)" stroke-width="1.5" stroke-linecap="round"/></svg></span>
           <div>
             <h3 data-i18n="strengths.1.title">素材への一貫したこだわり</h3>
             <p data-i18n="strengths.1.desc">米の選定から製法まで、効率より味と食感を優先する方針を創業前から明文化しています。</p>
           </div>
         </div>
-        <div class="strength">
+        <div class="strength reveal">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="var(--vermillion)" stroke-width="1.5"/><circle cx="12" cy="12" r="8" stroke="var(--indigo-deep)" stroke-width="1.5" opacity=".55"/></svg></span>
           <div>
             <h3 data-i18n="strengths.2.title">一貫したブランド世界観</h3>
             <p data-i18n="strengths.2.desc">ロゴ・配色・言葉づかいまで、このサイト自体が doradora の世界観づくりの一例です。</p>
           </div>
         </div>
-        <div class="strength">
+        <div class="strength reveal">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 12h13M13 6l6 6-6 6" stroke="var(--vermillion)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <div>
             <h3 data-i18n="strengths.3.title">設立準備段階ならではの機動力</h3>
             <p data-i18n="strengths.3.desc">組織が小さい今だからこそ、お取引先のご要望に合わせた意思決定を素早く行えます。</p>
           </div>
         </div>
-        <div class="strength">
+        <div class="strength reveal">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4.5 4.5 0 0 1 7-3.7A4.5 4.5 0 0 1 19 11c0 5.6-7 10-7 10Z" stroke="var(--vermillion)" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
           <div>
             <h3 data-i18n="strengths.4.title">一つひとつに向き合う姿勢</h3>
@@ -503,33 +536,33 @@
 
   <section class="roadmap" id="roadmap">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="kicker">Our Journey</span>
         <h2 class="section-title" data-i18n="roadmap.title">会社設立に向けた歩み</h2>
         <p data-i18n-html="roadmap.lead">餅づくりの工程になぞらえて、<br>doradora が今どの段階にいるかをお伝えします。</p>
       </div>
-      <div class="roadmap-line">
-        <div class="roadmap-step is-done">
+      <div class="roadmap-line reveal-line">
+        <div class="roadmap-step is-done reveal">
           <span class="process" data-i18n="roadmap.step1.process">蒸す</span>
           <h3 data-i18n="roadmap.step1.title">ブランドコンセプト設計</h3>
           <span class="tag-progress" data-i18n="roadmap.tag.done">完了</span>
         </div>
-        <div class="roadmap-step is-done">
+        <div class="roadmap-step is-done reveal">
           <span class="process" data-i18n="roadmap.step2.process">つく</span>
           <h3 data-i18n="roadmap.step2.title">レシピ・製法の試作</h3>
           <span class="tag-progress" data-i18n="roadmap.tag.inProgress">進行中</span>
         </div>
-        <div class="roadmap-step">
+        <div class="roadmap-step reveal">
           <span class="process" data-i18n="roadmap.step3.process">こねる</span>
           <h3 data-i18n="roadmap.step3.title">会社設立の手続き</h3>
           <span class="tag-progress" data-i18n="roadmap.tag.preparing">準備中</span>
         </div>
-        <div class="roadmap-step">
+        <div class="roadmap-step reveal">
           <span class="process" data-i18n="roadmap.step4.process">丸める</span>
           <h3 data-i18n="roadmap.step4.title">製造・販売拠点づくり</h3>
           <span class="tag-progress" data-i18n="roadmap.tag.considering">検討中</span>
         </div>
-        <div class="roadmap-step">
+        <div class="roadmap-step reveal">
           <span class="process" data-i18n="roadmap.step5.process">供する</span>
           <h3 data-i18n="roadmap.step5.title">本格始動・お披露目</h3>
           <span class="tag-progress">Coming Soon</span>
@@ -540,8 +573,8 @@
 
   <section class="vision" id="vision">
     <div class="wrap vision-grid">
-      <blockquote class="pull" data-i18n-html="vision.pull">「もう一度、<br>餅を主役に。」</blockquote>
-      <div class="vision-body">
+      <blockquote class="pull reveal" data-i18n-html="vision.pull">「もう一度、<br>餅を主役に。」</blockquote>
+      <div class="vision-body reveal">
         <p data-i18n="vision.p1">餅は、日本の暮らしの節目に寄り添ってきた食べものです。お正月、お祝いの席、ちょっとした差し入れ。doradoraは、その当たり前にあった存在を、あらためて主役に据えることから始めます。</p>
         <p data-i18n="vision.p2">効率化が進む時代だからこそ、杵と臼が生む音・湯気・手触りには価値があると考えています。品質へのこだわりと、体験としての楽しさ。その両方を欠かさずに事業を育てていきます。</p>
       </div>
@@ -550,11 +583,11 @@
 
   <section id="company">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="kicker">Company</span>
         <h2 class="section-title" data-i18n="company.title">会社概要</h2>
       </div>
-      <table class="company-table">
+      <table class="company-table reveal">
         <tr>
           <th data-i18n="company.th1">商号</th>
           <td>株式会社doradora <span class="tag-progress" data-i18n="company.tagPreparing">設立準備中</span></td>
@@ -577,7 +610,7 @@
 
   <section id="contact">
     <div class="wrap">
-      <div class="contact-box">
+      <div class="contact-box reveal">
         <div>
           <h2 data-i18n="contact.title">ご依頼・お問い合わせ</h2>
           <p data-i18n="contact.lead">出張餅つき・イベントのご依頼は専用フォームから、事業提携やお取引に関するお問い合わせはメールでご連絡ください。</p>
@@ -623,5 +656,6 @@
   })();
 </script>
 <script src="i18n.js"></script>
+<script src="motion.js"></script>
 </body>
 </html>
